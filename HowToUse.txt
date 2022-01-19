@@ -1,0 +1,3 @@
+Notes
+
+After pushing it takes something like a minute to update, so, like, just wait
