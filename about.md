@@ -1,2 +1,0 @@
-# THIS IS THE TITLE
-halo
