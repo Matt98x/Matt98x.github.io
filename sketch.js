@@ -22,22 +22,15 @@ var lol;
 function setup() { 
 
   canvas=createCanvas(500,500);
-  
+  background(0,0);
   canvas.position(0,140);
-  
-  lol=loadJSON("/all");
-  var keys=Object.keys(lol);
-  r=keys.length;
- r++;
-  console.log(r);
- drawData();
+  drawData();
  
 
  
   //Inizializzo la schermata
   titolo=createElement("h1","Campagne D&D!");
   button1= createButton("CREA NUOVA CAMPAGNA"); 
-  r++;
   button1.mousePressed(submitWord);
   
   titolo.position(10,0);
@@ -81,35 +74,10 @@ function setup() {
   
   
   function submitWord(){
-    r++;
-    loadJSON('add/Campagna'+r+'/'+3);
-   loadJSON("/new/campagna"+r);
     
-    loadJSON('generate/'+'campagna'+r+'/Fabio');
-    loadJSON('/fill/'+'campagna'+r+'/Fabio')
-    loadJSON('generate/'+'campagna'+r+'/Giuseppe');
-    loadJSON('/fill/'+'campagna'+r+'/Giuseppe')
-    loadJSON('generate/'+'campagna'+r+'/Matteo');
-    loadJSON('/fill/'+'campagna'+r+'/Matteo')
-    loadJSON('generate/'+'campagna'+r+'/Riccardo');
-    loadJSON('/fill/'+'campagna'+r+'/Riccardo')
-    
-    drawData()
       
     
   }
-  
-  
-  
-  
-  function drawData(){
-  loadJSON("/all",gotData);
-}
-
-
-  
-  
-  
   
   function draw(){ 
  
@@ -117,10 +85,3 @@ function setup() {
     
    
   }
-
-  
-  
-  
-
-
-
