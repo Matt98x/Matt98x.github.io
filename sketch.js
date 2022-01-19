@@ -22,7 +22,7 @@ var lol;
 function setup() { 
 
   canvas=createCanvas(500,500);
-  //background(51);
+  background(51);
   canvas.position(0,140);
   drawData();
  
@@ -80,7 +80,7 @@ function setup() {
   }
   
   function drawData(){
-    
+
   }
 
   function draw(){ 
