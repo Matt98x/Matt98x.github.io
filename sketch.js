@@ -79,6 +79,10 @@ function setup() {
     
   }
   
+  function drawData(){
+    
+  }
+
   function draw(){ 
  
     
