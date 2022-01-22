@@ -14,9 +14,14 @@ var  nav_json=[{
 ]
 
 nav_height=100
-function preload(){
-    path = '../../repos.json'
-    words = loadJSON(path)
+function goWiki(){
+    path = 'https://api.github.com/users/Matt98x/repos'
+    loadJSON(path,got_data)
+}
+
+function got_data(data){
+    console.log(data)
+    words = data
 }
 
 function setup(){  
