@@ -28,10 +28,11 @@ class Button_to_repo{
         this.html_url = link
         this.x = x
         this.y = y
+
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
-        
+        this.button.size(200,this.y)
         this.callback()
         
     }
