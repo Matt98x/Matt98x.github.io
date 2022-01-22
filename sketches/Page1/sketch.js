@@ -12,7 +12,7 @@ function preload(){
 function setup(){  
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
-    stringComm= "Button_to_repo"
+    stringComm= "Button_to_nav"
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0,stringComm)
     stringComm= "Button_to_repo"
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0,stringComm)                                                                
@@ -97,7 +97,6 @@ class block_menu{
                 this.cumulative+=interspace+this.bwidth
             }
             this.temp = eval("new "+func+"(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
-            //this.temp = Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
@@ -116,7 +115,6 @@ class Button_to_repo{
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.size(width,height)
-        this.callback()
         
     }
     
@@ -145,7 +143,6 @@ class Button_to_nav{
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.size(width,height)
-        this.callback()
         
     }
     
