@@ -30,7 +30,7 @@ class block_for_repos{
         var len = Object.keys(Jsonclass).length
         this.list = []
         for(i=0;i<len;i++){
-            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx,ULCy+i*distancing,width,height/len)
+            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx,ULCy+i*height/len,width,height/len)
             this.list.push(temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
