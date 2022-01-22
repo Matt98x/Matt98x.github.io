@@ -21,7 +21,7 @@ class Button_to_link{
     constructor(name,link,x,y){
         this.name = name
         this.html_url = link
-        console.log(str(this.html_url))     
+        console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.mousePressed(this.callback)
