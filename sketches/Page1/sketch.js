@@ -29,6 +29,6 @@ class Button_to_link{
 
     callback(){
         
-        window.open(str(this.html_url))
+        window.open('"'+str(this.html_url)+'"')
     }
 }
