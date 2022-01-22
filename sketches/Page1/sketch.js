@@ -24,6 +24,8 @@ class Button_to_link{
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
+        const unboundCall = this.callback;
+        const boundCall = unboundCall.bind(this)
         this.button.mousePressed(this.callback)
         //this.callback()
         
