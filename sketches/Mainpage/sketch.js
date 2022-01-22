@@ -29,8 +29,8 @@ function setup() {
 
  
   //Inizializzo la schermata
-  titolo=createElement("h1","Campagne D&D!");
-  button1= createButton("CREA NUOVA CAMPAGNA"); 
+  titolo=createElement("h1","Sito WEB");
+  button1= createButton("Tasto di prova"); 
   button1.mousePressed(submitWord);
   
   titolo.position(10,0);
