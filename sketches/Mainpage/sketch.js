@@ -25,8 +25,8 @@ function setup() {
   titolo=createElement("h1","Sito WEB");
   titolo.position(10,0);
 
+  button1= createButton("Tasto di prova");
   button1.mousePressed(submitWord);
-  button1= createButton("Tasto di prova"); 
   button1.position(10,80);
 
   test=createInput();

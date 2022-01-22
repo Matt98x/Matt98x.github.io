@@ -1,4 +1,4 @@
-
+var words
 
 function preload(){
     path = '../../repos.json'
@@ -7,7 +7,9 @@ function preload(){
 }
 
 function setup(){
-
+    for(i=0;i<length(words);i++){
+        createA(words[i].html_url,words[i].name);
+    }
 }
 
 function draw(){
