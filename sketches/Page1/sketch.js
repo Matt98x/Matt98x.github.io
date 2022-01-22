@@ -12,8 +12,8 @@ function preload(){
 function setup(){  
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
-    nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
-    repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0)                                                                
+    nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0,"Button_to_nav")
+    repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0,"Button_to_repo")                                                                
 }
 
 function draw(){
@@ -22,7 +22,7 @@ function draw(){
 
 
 class block_menu{
-    constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
+    constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind,func){
         this.len = Object.keys(Jsonclass).length
         console.log(this.len)
         this.list = []
@@ -97,7 +97,7 @@ class block_menu{
                 this.spaceU=border
                 this.cumulative+=interspace+this.bwidth
             }
-            this.temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,
+            this.temp = new eval(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,
                 ULCy+this.spaceU,this.bwidth,this.bheight)
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
