@@ -3,19 +3,15 @@ var distancing = 25
 var list = []
 var repositories
 i = 0
+nav_height=100
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
 }
 
 function setup(){    
-    // for(i=0;i<Object.keys(words).length;i++){
-    //     temp = new Button_to_repo(words[i].name,words[i].html_url,0,i*distancing,200,distancing)
-    //     list.push(temp)
-    //     list[i].button.mousePressed(list[i].callback)
-        
-    // }
-    repositories=new block_for_repos(words,0,0,windowWidth,200,5,1,"horizontal",0)                                                                
+    nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
+    repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vartical",0)                                                                
 }
 
 function draw(){
@@ -23,7 +19,7 @@ function draw(){
 }
 
 
-class block_for_repos{
+class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
         var len = Object.keys(Jsonclass).length
         this.list = []
