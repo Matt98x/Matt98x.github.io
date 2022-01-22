@@ -9,7 +9,7 @@ function preload(){
 
 function setup(){    
     for(i=0;i<Object.keys(words).length;i++){
-        temp = new Button_to_repo(words[i].name,words[i].html_url,0,distancing*i)
+        temp = new Button_to_repo(words[i].name,words[i].html_url,0,i*distancing,200,distancing)
         list.push(temp)
         list[i].button.mousePressed(list[i].callback)
         
@@ -23,16 +23,18 @@ function draw(){
 }
 
 class Button_to_repo{
-    constructor(name,link,x,y){
+    constructor(name,link,x,y,width,height){
         this.name = name
         this.html_url = link
         this.x = x
         this.y = y
+        this.width = width
+        this.height = height
 
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
-        this.button.size(200,this.y)
+        this.button.size(width,height)
         this.callback()
         
     }
