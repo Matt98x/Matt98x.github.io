@@ -24,6 +24,7 @@ function draw(){
 class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
         this.len = Object.keys(Jsonclass).length
+        console.log(this.len)
         this.list = []
         this.graphics = createGraphics(width,height)
         this.graphics.background(51)
