@@ -10,7 +10,8 @@ function setup(){
     console.log(Object.keys(words).length)
     for(i=0;i<Object.keys(words).length;i++){
         console.log(words[i].html_url)
-        createA(words[i].html_url,words[i].name);
+        link = createA(words[i].html_url,words[i].name);
+        link.position(0,10*i)
     }
 }
 
