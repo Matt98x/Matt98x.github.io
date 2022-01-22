@@ -11,7 +11,7 @@ function setup(){
     for(i=0;i<Object.keys(words).length;i++){
         temp = new Button_to_link(words[i].name,words[i].html_url,0,distancing*i)
         list.push(temp)
-        list[i].mousePressed(list[i].callback)
+        list[i].button.mousePressed(list[i].callback)
         
         console.log(list[i].button)
     }
