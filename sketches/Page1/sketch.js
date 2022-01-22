@@ -27,7 +27,7 @@ class block_menu{
         var len = Object.keys(Jsonclass).length
         this.list = []
         this.graphics = createGraphics(width,height)
-        this.graphics.fill(51)
+        this.graphics.background(51)
         this.graphics.position(ULCx,ULCy);
         var encumbrance= 2*border
         var limit = 0
