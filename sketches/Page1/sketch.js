@@ -9,7 +9,7 @@ var  nav_json=[{
 },
 {
     "name": "Github-main",
-    "html_url": "https://daedalus-furnace.herokuapp.com"
+    "html_url": "https://matt98x.github.io"
 }
 ]
 
