@@ -7,7 +7,8 @@ function preload(){
 }
 
 function setup(){
-    for(i=0;i<length(words);i++){
+    console.log(Object.keys(words))
+    for(i=0;i<Object.keys(words);i++){
         createA(words[i].html_url,words[i].name);
     }
 }
