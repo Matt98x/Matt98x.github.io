@@ -1,6 +1,5 @@
 var words
 var distancing = 25
-var list = []
 var repositories
 var nav_menu
 
