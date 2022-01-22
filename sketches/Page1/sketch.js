@@ -54,7 +54,7 @@ class block_for_repos{
             var twidth = textWidth(Jsonclass[i].name)+2*interspace
             var theight = 12 + 2*interspace// this is the default
             console.log(str(twidth)+" "+str(theight))
-            band=limit-initind
+            var band=limit-initind
             if(orientation=="vertical"){
                 if(limit==len){
                     var bheight = theight
