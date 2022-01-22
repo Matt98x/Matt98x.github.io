@@ -49,6 +49,7 @@ class block_for_repos{
             limit=j+1
         }
         console.log(str(encumbrance)+" "+str(width-2*border)+" "+limit)
+        var cumulative = 0
         for(var i=initind;i<limit;i++){
             
             var twidth = textWidth(Jsonclass[i].name)+2*border
@@ -63,7 +64,8 @@ class block_for_repos{
                 }
                 var bwidth=width-2*border
                 var spaceL=border
-                var spaceU=border+i*(interspace+bheight)
+                var spaceU=border+cumulative
+                cumulative+=interspace+bwidth
             }else{
                 if(limit==len){
                     var bwidth = twidth
@@ -71,8 +73,9 @@ class block_for_repos{
                     var bwidth=(width-len*interspace-2*border)/band
                 }
                 var bheight=height-2^border
-                var spaceL=border+i*(interspace+bwidth)/band
+                var spaceL=border+cumulative
                 var spaceU=border
+                cumulative+=interspace+bwidth
             }
             var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+spaceL,
                 ULCy+spaceU,bwidth,bheight)
