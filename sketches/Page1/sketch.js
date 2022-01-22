@@ -32,8 +32,8 @@ class block_for_repos{
         canvas.position(ULCx,ULCy);
         for(i=0;i<len;i++){
             
-            twidth = textWidth(Jsonclass[i].name)
-            theight = textHeight(Jsonclass[i].name)
+            var twidth = textWidth(Jsonclass[i].name)
+            var height = textHeight(Jsonclass[i].name)
             condole.log(str(twidth)+" "+str(theight))
             
             if(orientation=="vertical"){
