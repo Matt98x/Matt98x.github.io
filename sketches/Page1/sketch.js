@@ -28,7 +28,7 @@ class Button_to_link{
     }
 
     callback(){
-        
+        console.log('"'+str(this.html_url)+'"')
         window.open('"'+str(this.html_url)+'"')
     }
 }
