@@ -1,5 +1,5 @@
 var words
-var distancing = 20
+var distancing = 25
 var list = []
 i = 0
 function preload(){
@@ -9,7 +9,7 @@ function preload(){
 
 function setup(){    
     for(i=0;i<Object.keys(words).length;i++){
-        temp = new Button_to_link(words[i].name,words[i].html_url,0,distancing*i)
+        temp = new Button_to_repo(words[i].name,words[i].html_url,0,distancing*i)
         list.push(temp)
         list[i].button.mousePressed(list[i].callback)
         
@@ -22,7 +22,7 @@ function draw(){
 
 }
 
-class Button_to_link{
+class Button_to_repo{
     constructor(name,link,x,y){
         this.name = name
         this.html_url = link
