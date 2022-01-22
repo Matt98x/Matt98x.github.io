@@ -26,7 +26,6 @@ function draw(){
 class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind,func){
         this.len = Object.keys(Jsonclass).length
-        console.log(this.len)
         this.list = []
         this.graphics = createGraphics(width,height)
         this.graphics.background(51)
@@ -62,7 +61,6 @@ class block_menu{
             this.limit=j+1
             console.log(j)
         }
-        console.log(str(this.encumbrance)+" "+str(height-2*border)+" "+this.limit)
         this.cumulative = 0
         for(var i=initind;i<this.limit;i++){
             
