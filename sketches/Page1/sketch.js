@@ -60,17 +60,17 @@ class block_for_repos{
                 if(limit==len){
                     var bheight = theight
                 }else{
-                    var bheight=(height-len*interspace-2*border)/band
+                    var bheight=theight*height/encumbrance
                 }
                 var bwidth=width-2*border
                 var spaceL=border
                 var spaceU=border+cumulative
-                cumulative+=interspace+bwidth
+                cumulative+=interspace+bheight
             }else{
                 if(limit==len){
                     var bwidth = twidth
                 }else{
-                    var bwidth=(width-len*interspace-2*border)/band
+                    var bwidth=twidth*width/encumbrance
                 }
                 var bheight=height-2^border
                 var spaceL=border+cumulative
