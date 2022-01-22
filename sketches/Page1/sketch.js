@@ -5,12 +5,9 @@ i = 0
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
-    console.log(words)
 }
 
-function setup(){
-    console.log(Object.keys(words).length)
-    
+function setup(){    
     for(i=0;i<Object.keys(words).length;i++){
         temp = new Button_to_link(words[i].name,words[i].html_url,0,distancing*i)
     }
@@ -31,7 +28,6 @@ class Button_to_link{
     }
 
     callback(){
-        
-        window.open(this.html_url)
+        window.open(str(this.html_url))
     }
 }
