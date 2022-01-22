@@ -36,12 +36,14 @@ class block_for_repos{
             if(orientation=="vertical"){
                 encumbrance+=12 + 2*border// this is the default
                 if(encumbrance>height-2*border){
+                    encumbrance-=12 + 2*border// this is the default
                     limit=j-1
                     break
                 }
             }else{
                 encumbrance+=textWidth(Jsonclass[j].name)+2*border
                 if(encumbrance>width-2*border){
+                    encumbrance-=textWidth(Jsonclass[j].name)+2*border
                     limit=j-1
                     break
                 }
