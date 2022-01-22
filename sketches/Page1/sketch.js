@@ -22,10 +22,11 @@ function draw(){
 
 class Repos_list{
     constructor(ReposList,ULcornerx,ULcornery,width,height){
+        this.list=[]
         for(i=0;i<Object.keys(ReposList).length;i++){
             temp = new Button_to_repo(ReposList[i].name,ReposList[i].html_url,ULcornerx,ULcornery+i*distancing,width,height/Object.keys(ReposList).length)
             list.push(temp)
-            list[i].button.mousePressed(list[i].callback)
+            this.list[i].button.mousePressed(this.list[i].callback)
         }
     }
 
