@@ -1,7 +1,7 @@
 var words
 var distancing = 25
 var list = []
-var repo_list = []
+var repo_list 
 
 i = 0
 function preload(){
