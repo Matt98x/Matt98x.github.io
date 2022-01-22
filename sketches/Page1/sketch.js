@@ -1,39 +1,27 @@
 var words
 var distancing = 25
 var list = []
-var repo_list 
-
 i = 0
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
-    
 }
 
 function setup(){    
-    
-    
-    repo_list=new Repos_list(words,10,40,200,1300) 
-                                                                     
-                                                                     
-    console.log(repo_list)
+    for(i=0;i<Object.keys(words).length;i++){
+        temp = new Button_to_repo(words[i].name,words[i].html_url,0,i*distancing,200,distancing)
+        list.push(temp)
+        list[i].button.mousePressed(list[i].callback)
+        
+        console.log(list[i].button)
+    }
+    console.log(list)                                                                    
 }
 
 function draw(){
 
 }
 
-class Repos_list{
-    constructor(ReposList,ULcornerx,ULcornery,width,height){
-        this.list=[]
-        for(i=0;i<Object.keys(ReposList).length;i++){
-            //temp = new Button_to_repo(ReposList[i].name,ReposList[i].html_url,ULcornerx,ULcornery+i*distancing,width,height/Object.keys(ReposList).length)
-            //this.list.push(temp)
-            //this.list[i].button.mousePressed(this.list[i].callback)
-        }
-    }
-
-}
 
 class Button_to_repo{
     constructor(name,link,x,y,width,height){
@@ -54,13 +42,14 @@ class Button_to_repo{
     
     callback(){
         console.log(this.y)
-        for(i=0;i<repo_list.list.length;i++){
+        for(i=0;i<list.length;i++){
             
-            if(repo_list.list[i].x == this.x && repo_list.list[i].y == this.y){
-                console.log(repo_list.list[i])
-                window.open(repo_list.list[i].html_url,'_self')
+            if(list[i].x == this.x && list[i].y == this.y){
+                console.log(list[i])
+                window.open(list[i].html_url,'_self')
             }
         }
     }
 }
 
+//
