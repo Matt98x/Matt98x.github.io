@@ -48,6 +48,7 @@ class block_menu{
                 }
             }
             this.limit=j+1
+            console.log(this.limit)
         }
         console.log(str(this.encumbrance)+" "+str(width-2*border)+" "+this.limit)
         this.cumulative = 0
