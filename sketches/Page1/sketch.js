@@ -21,10 +21,11 @@ class Button_to_link{
     constructor(name,link,x,y){
         this.name = name
         this.html_url = link
-        console.log('"'+str(this.html_url)+'"')     
+        //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.mousePressed(this.callback(link))
+        this.func()
         // this.callback=function(){
         //     console.log('"'+str(this.html_url)+'"')
         //     window.open('"'+str(this.html_url)+'"')
@@ -35,5 +36,7 @@ class Button_to_link{
         console.log('"'+str(link)+'"')
         window.open('"'+str(link)+'"')
     }
-    
+    func(){
+        console.log('"'+str(link)+'"')
+    }
 }
