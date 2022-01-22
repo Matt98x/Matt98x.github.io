@@ -30,7 +30,7 @@ class Button_to_link{
     }
     
     callback(){
-        console.log("ciao")
+        console.log(this.name)
     }
 }
 
