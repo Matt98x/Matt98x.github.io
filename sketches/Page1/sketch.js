@@ -40,15 +40,15 @@ class block_for_repos{
                     break
                 }
             }else{
-                encumbrance+=textWidth(Jsonclass[i].name)+2*interspace
+                encumbrance+=textWidth(Jsonclass[j].name)+2*interspace
                 if(encumbrance>width-2*border){
                     limit=j-1
                     break
                 }
             }
-            limit=j
+            limit=j+1
         }
-        console.log(str(encumbrance)+" "+str(height-2*border))
+        console.log(str(encumbrance)+" "+str(height-2*border)+" "+limit)
         for(var i=initind;i<limit;i++){
             
             var twidth = textWidth(Jsonclass[i].name)+2*interspace
