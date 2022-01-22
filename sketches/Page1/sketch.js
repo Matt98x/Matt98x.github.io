@@ -14,9 +14,7 @@ function setup(){
     //     list.push(temp)
     //     list[i].button.mousePressed(list[i].callback)
         
-    //     console.log(list[i].button)
     // }
-    // console.log(list)    
     repositories=new block_for_repos(words,0,0,200,windowHeight,5,1,"vertical")                                                                
 }
 
@@ -33,9 +31,11 @@ class block_for_repos{
         background(51);
         canvas.position(ULCx,ULCy);
         for(i=0;i<len;i++){
-            width = width
-            height = height 
-            console.log(char("&#x2B07"))
+            
+            twidth = textWidth(Jsonclass[i].name)
+            theight = textHeight(Jsonclass[i].name)
+            condole.log(str(twidth)+" "+str(theight))
+            
             if(orientation=="vertical"){
                 var bwidth=width-2*border
                 var bheight=(height-len*interspace-2*border)/len
@@ -64,7 +64,6 @@ class Button_to_repo{
         this.width = width
         this.height = height
 
-        //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.size(width,height)
@@ -74,11 +73,9 @@ class Button_to_repo{
     
     callback(){
         if(repositories){
-            console.log(this.y)
             for(i=0;i<repositories.list.length;i++){
                 
                 if(repositories.list[i].x == this.x && repositories.list[i].y == this.y){
-                    console.log(repositories.list[i])
                     window.open(repositories.list[i].html_url,'_self')
                 }
             }
