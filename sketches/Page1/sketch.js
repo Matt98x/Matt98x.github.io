@@ -29,7 +29,7 @@ class Button_to_link{
         //     console.log('"'+str(this.html_url)+'"')
         //     window.open('"'+str(this.html_url)+'"')
         // }
-        this.func()=function(){
+        this.func=function(){
             console.log('"'+str(link)+'"')
         }
     }
