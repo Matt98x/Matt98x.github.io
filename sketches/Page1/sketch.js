@@ -1,7 +1,7 @@
 
 
 function preload(){
-    path = '../../test.json'
+    path = '../../repos.json'
     words = loadJSON(path)
     console.log(words)
 }
