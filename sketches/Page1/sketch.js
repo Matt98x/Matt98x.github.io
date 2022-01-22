@@ -17,7 +17,7 @@ function setup(){
     //     console.log(list[i].button)
     // }
     // console.log(list)    
-    repositories=new block_for_repos(words,0,0,200,300)                                                                
+    repositories=new block_for_repos(words,0,0,200,300,5)                                                                
 }
 
 function draw(){
@@ -26,14 +26,14 @@ function draw(){
 
 
 class block_for_repos{
-    constructor(Jsonclass,ULCx,ULCy,width,height){
+    constructor(Jsonclass,ULCx,ULCy,width,height,border){
         var len = Object.keys(Jsonclass).length
         this.list = []
         canvas=createCanvas(width,height);
         background(51);
         canvas.position(ULCx,ULCy);
         for(i=0;i<len;i++){
-            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx,ULCy+i*height/len,width,height/len)
+            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+border,ULCy+border+i*(height-2*border)/len,width,(height-2*border)/len)
             this.list.push(temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
