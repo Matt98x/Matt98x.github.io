@@ -2,6 +2,7 @@ var words
 var distancing = 25
 var list = []
 var repositories
+var nav_menu
 i = 0
 nav_height=100
 function preload(){
@@ -112,3 +113,30 @@ class Button_to_repo{
 }
 
 //
+class Button_to_repo{
+    constructor(name,link,x,y,width,height){
+        this.name = name
+        this.html_url = link  
+        this.x = x
+        this.y = y
+        this.width = width
+        this.height = height
+
+        this.button=createButton(this.name)
+        this.button.position(x,y)
+        this.button.size(width,height)
+        this.callback()
+        
+    }
+    
+    callback(){
+        if(nav_menu){
+            for(i=0;i<nav_menu.list.length;i++){
+                
+                if(nav_menu.list[i].x == this.x && nav_menu.list[i].y == this.y){
+                    window.open(nav_menu.list[i].html_url,'_self')
+                }
+            }
+        }
+    }
+}
