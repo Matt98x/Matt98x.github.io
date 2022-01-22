@@ -3,7 +3,7 @@ var distancing = 25
 var list = []
 var repositories
 var nav_menu
-i = 0
+
 nav_height=100
 function preload(){
     path = '../../repos.json'
@@ -55,8 +55,6 @@ class block_menu{
             
             var twidth = textWidth(Jsonclass[i].name)+2*border
             var theight = 12 + 2*border// this is the default
-            console.log(str(twidth)+" "+str(theight))
-            var band=limit-initind
             if(orientation=="vertical"){
                 if(limit==len){
                     var bheight = theight
