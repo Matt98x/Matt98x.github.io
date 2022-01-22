@@ -39,7 +39,7 @@ class block_for_repos{
                 width-2*border,(height-len*interspace-2*border)/len)
             }else{
                 var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,
-                    ULCx+border+interspace+i*(height-2*border)/len,
+                    ULCx+border+interspace+i*(width-2*border)/len,
                     ULCy+border,(width-len*interspace-2*border)/len,height-2^border)
             }
             this.list.push(temp)
