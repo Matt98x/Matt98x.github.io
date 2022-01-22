@@ -7,7 +7,7 @@ i = 0
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
-    repo_list=Repos_list(words)
+    repo_list=Repos_list(words,10,40,200,1300)
 }
 
 function setup(){    
