@@ -12,9 +12,9 @@ function preload(){
 function setup(){  
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
-    stringComm='new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)'
+    stringComm= "Button_to_repo"
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0,stringComm)
-    stringComm='new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)'
+    stringComm= "Button_to_repo"
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0,stringComm)                                                                
 }
 
@@ -36,7 +36,6 @@ class block_menu{
         for(var j=initind; j<this.len;j++){
             if(orientation=="vertical"){
                 this.encumbrance+=12 + 2*border// this is the default
-                console.log(this.encumbrance)
                 if(this.encumbrance>height-2*border){
                     this.encumbrance-=12 + 2*border// this is the default
                     this.limit=j
@@ -97,7 +96,8 @@ class block_menu{
                 this.spaceU=border
                 this.cumulative+=interspace+this.bwidth
             }
-            this.temp = eval(func)
+            this.temp = eval("new "+func+"(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
+            this.temp = Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
