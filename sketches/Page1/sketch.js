@@ -13,7 +13,7 @@ function setup(){
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
-    repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vartical",0)                                                                
+    repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0)                                                                
 }
 
 function draw(){
@@ -41,7 +41,15 @@ class block_menu{
                     this.limit=j
                     break
                 }
+            }else if("horizontal"){
+                this.encumbrance+=textWidth(Jsonclass[j].name)+2*border
+                if(this.encumbrance>width-2*border){
+                    this.encumbrance-=textWidth(Jsonclass[j].name)+2*border
+                    this.limit=j
+                    break
+                }
             }else{
+                console.log("Invalid orientation: default to horizontal")
                 this.encumbrance+=textWidth(Jsonclass[j].name)+2*border
                 if(this.encumbrance>width-2*border){
                     this.encumbrance-=textWidth(Jsonclass[j].name)+2*border
@@ -68,6 +76,16 @@ class block_menu{
                 this.spaceL=border
                 this.spaceU=border+this.cumulative
                 this.cumulative+=interspace+this.bheight
+            }else if(orientation=="horizontal"){
+                if(this.limit==this.len){
+                    this.bwidth = this.twidth
+                }else{
+                    this.bwidth=this.twidth*(width-2*border)/this.encumbrance
+                }
+                this.bheight=height-2*border
+                this.spaceL=border+this.cumulative
+                this.spaceU=border
+                this.cumulative+=interspace+this.bwidth
             }else{
                 if(this.limit==this.len){
                     this.bwidth = this.twidth
