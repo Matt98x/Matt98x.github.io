@@ -26,6 +26,8 @@ class Button_to_link{
     constructor(name,link,x,y){
         this.name = name
         this.html_url = link
+        this.x = x
+        this.y = y
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
@@ -36,7 +38,12 @@ class Button_to_link{
     
     callback(){
         console.log(this)
+        for(i in list){
+            if(i.x == this.position.x && i.y == this.position.y){
+                window.open('"'+str(i.html_url)+'"')
+            }
+        }
     }
 }
 
-//window.open('"'+str(link)+'"')
+//
