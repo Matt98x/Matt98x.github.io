@@ -62,7 +62,7 @@ class block_for_repos{
                 if(limit==len){
                     var bheight = theight
                 }else{
-                    var bheight=theight*height/encumbrance
+                    var bheight=theight*(height-2*border)/encumbrance
                 }
                 var bwidth=width-2*border
                 var spaceL=border
