@@ -10,7 +10,9 @@ function preload(){
 function setup(){    
     for(i=0;i<Object.keys(words).length;i++){
         temp = new Button_to_link(words[i].name,words[i].html_url,0,distancing*i)
+        temp.button.mousePressed(temp.callback)
     }
+    console.log(list)                                                                    
 }
 
 function draw(){
@@ -24,10 +26,8 @@ class Button_to_link{
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
-        const unboundCall = this.callback;
-        const boundCall = unboundCall.bind(this)
-        this.button.mousePressed(this.callback)
-        //this.callback()
+        
+        this.callback()
         
     }
     
