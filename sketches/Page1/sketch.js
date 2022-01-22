@@ -47,6 +47,7 @@ class block_for_repos{
                 }
             }
         }
+        console.log(limit)
         for(var i=initind;i<limit;i++){
             
             var twidth = textWidth(Jsonclass[i].name)+2*interspace
