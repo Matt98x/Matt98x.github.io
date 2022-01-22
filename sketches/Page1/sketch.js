@@ -37,7 +37,7 @@ class Button_to_link{
     }
     
     callback(){
-        console.log(this)
+        console.log(this.elt)
         // for(i in list){
         //     if(i.x == this.position.x && i.y == this.position.y){
         //         window.open('"'+str(i.html_url)+'"')
