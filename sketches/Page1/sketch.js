@@ -1,5 +1,7 @@
 var words
 var distancing = 20
+var list = []
+i = 0
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
@@ -8,13 +10,26 @@ function preload(){
 
 function setup(){
     console.log(Object.keys(words).length)
+    
     for(i=0;i<Object.keys(words).length;i++){
-        console.log(words[i].html_url)
-        link = createA(words[i].html_url,words[i].name);
-        link.position(0,distancing*i)
+        temp = new Button_to_link(words[i].name,words[i].html_url,0,distancing*i)
     }
 }
 
 function draw(){
 
+}
+
+class Button_to_link{
+    constructor(name,link,x,y){
+        this.name = name
+        this.html_url = link
+        this.button=createButton(this.name)
+        this.button.position(x,y)
+        this.button.mousePressed(this.callback)
+    }
+
+    callback(){
+        window.open(this.html_url)
+    }
 }
