@@ -28,7 +28,7 @@ class Repos_list{
         this.list=[]
         for(i=0;i<Object.keys(ReposList).length;i++){
             temp = new Button_to_repo(ReposList[i].name,ReposList[i].html_url,ULcornerx,ULcornery+i*distancing,width,height/Object.keys(ReposList).length)
-            list.push(temp)
+            this.list.push(temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
     }
