@@ -1,13 +1,3 @@
-nav_json=[{
-    "name": "Home",
-    "html_url": "https://daedalus-furnace.herokuapp.com"
-},
-{
-    "name": "Github-main",
-    "html_url": "https://daedalus-furnace.herokuapp.com"
-}
-]
-
 class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind,func){
         this.len = Object.keys(Jsonclass).length
@@ -141,3 +131,14 @@ class Button_to_nav{
         }
     }
 }
+
+nav_json=[{
+    "name": "Home",
+    "html_url": "https://daedalus-furnace.herokuapp.com"
+},
+{
+    "name": "Github-main",
+    "html_url": "https://daedalus-furnace.herokuapp.com"
+}
+]
+
