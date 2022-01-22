@@ -27,7 +27,7 @@ function draw(){
 
 class block_for_repos{
     constructor(Jsonclass,ULCx,ULCy,width,height){
-        len = Object.keys(Jsonclass).length
+        var len = Object.keys(Jsonclass).length
         this.list = []
         for(i=0;i<len;i++){
             temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx,ULCy+i*distancing,width,height/len)
