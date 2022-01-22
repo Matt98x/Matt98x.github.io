@@ -113,7 +113,7 @@ class Button_to_repo{
 }
 
 //
-class Button_to_repo{
+class Button_to_nav{
     constructor(name,link,x,y,width,height){
         this.name = name
         this.html_url = link  
