@@ -38,11 +38,11 @@ class Button_to_link{
     
     callback(){
         console.log(this.y)
-        // for(i in list){
-        //     if(i.x == this.position.x && i.y == this.position.y){
-        //         window.open('"'+str(i.html_url)+'"')
-        //     }
-        // }
+        for(i in list){
+            if(i.x == this.x && i.y == this.y){
+                window.open('"'+str(i.html_url)+'"')
+            }
+        }
     }
 }
 
