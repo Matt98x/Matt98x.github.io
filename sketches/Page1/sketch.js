@@ -29,9 +29,11 @@ class Button_to_link{
         
     }
 
-    callback(link){
-        console.log('"'+str(link)+'"')
-        window.open('"'+str(link)+'"')
-    }
     
+    
+}
+
+function callback(link){
+    console.log('"'+str(link)+'"')
+    window.open('"'+str(link)+'"')
 }
