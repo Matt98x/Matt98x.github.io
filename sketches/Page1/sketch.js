@@ -46,6 +46,7 @@ class block_for_repos{
                     break
                 }
             }
+            limit=j
         }
         console.log(limit)
         for(var i=initind;i<limit;i++){
