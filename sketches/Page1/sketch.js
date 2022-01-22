@@ -23,61 +23,61 @@ function draw(){
 
 class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
-        var len = Object.keys(Jsonclass).length
+        this.len = Object.keys(Jsonclass).length
         this.list = []
         this.graphics = createGraphics(width,height)
         this.graphics.background(51)
         image(this.graphics,ULCx,ULCy)
-        var encumbrance= 2*border
-        var limit = 0
-        for(var j=initind; j<len;j++){
+        this.encumbrance= 2*border
+        this.limit = 0
+        for(var j=initind; j<this.len;j++){
             if(orientation=="vertical"){
-                encumbrance+=12 + 2*border// this is the default
-                if(encumbrance>height-2*border){
-                    encumbrance-=12 + 2*border// this is the default
-                    limit=j
+                this.encumbrance+=12 + 2*border// this is the default
+                if(this.encumbrance>height-2*border){
+                    this.encumbrance-=12 + 2*border// this is the default
+                    this.limit=j
                     break
                 }
             }else{
-                encumbrance+=textWidth(Jsonclass[j].name)+2*border
-                if(encumbrance>width-2*border){
-                    encumbrance-=textWidth(Jsonclass[j].name)+2*border
-                    limit=j
+                this.encumbrance+=textWidth(Jsonclass[j].name)+2*border
+                if(this.encumbrance>width-2*border){
+                    this.encumbrance-=textWidth(Jsonclass[j].name)+2*border
+                    this.limit=j
                     break
                 }
             }
-            limit=j+1
+            this.limit=j+1
         }
-        console.log(str(encumbrance)+" "+str(width-2*border)+" "+limit)
-        var cumulative = 0
-        for(var i=initind;i<limit;i++){
+        console.log(str(this.encumbrance)+" "+str(width-2*border)+" "+this.limit)
+        this.cumulative = 0
+        for(var i=initind;i<this.limit;i++){
             
-            var twidth = textWidth(Jsonclass[i].name)+2*border
-            var theight = 12 + 2*border// this is the default
+            this.twidth = textWidth(Jsonclass[i].name)+2*border
+            this.theight = 12 + 2*border// this is the default
             if(orientation=="vertical"){
-                if(limit==len){
-                    var bheight = theight
+                if(this.limit==this.len){
+                    this.bheight = this.theight
                 }else{
-                    var bheight=theight*(height-2*border)/encumbrance
+                    this.bheight=this.theight*(height-2*border)/this.encumbrance
                 }
-                var bwidth=width-2*border
-                var spaceL=border
-                var spaceU=border+cumulative
-                cumulative+=interspace+bheight
+                this.bwidth=width-2*border
+                this.spaceL=border
+                this.spaceU=border+this.cumulative
+                this.cumulative+=interspace+this.bheight
             }else{
-                if(limit==len){
-                    var bwidth = twidth
+                if(this.limit==this.len){
+                    this.bwidth = this.twidth
                 }else{
-                    var bwidth=twidth*(width-2*border)/encumbrance
+                    this.bwidth=this.twidth*(width-2*border)/this.encumbrance
                 }
-                var bheight=height-2*border
-                var spaceL=border+cumulative
-                var spaceU=border
-                cumulative+=interspace+bwidth
+                this.bheight=height-2*border
+                this.spaceL=border+this.cumulative
+                this.spaceU=border
+                this.cumulative+=interspace+this.bwidth
             }
-            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+spaceL,
-                ULCy+spaceU,bwidth,bheight)
-            this.list.push(temp)
+            this.temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,
+                ULCy+this.spaceU,this.bwidth,this.bheight)
+            this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
     }
