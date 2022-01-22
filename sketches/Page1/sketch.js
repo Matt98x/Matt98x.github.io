@@ -48,7 +48,7 @@ class block_for_repos{
             }
             limit=j+1
         }
-        console.log(str(encumbrance)+" "+str(height-2*border)+" "+limit)
+        console.log(str(encumbrance)+" "+str(width-2*border)+" "+limit)
         for(var i=initind;i<limit;i++){
             
             var twidth = textWidth(Jsonclass[i].name)+2*border
@@ -68,7 +68,7 @@ class block_for_repos{
                 if(limit==len){
                     var bwidth = twidth
                 }else{
-                    var bwidth=(width-len*interspace-2*border)
+                    var bwidth=(height-len*interspace-2*border)/band
                 }
                 var bheight=height-2^border
                 var spaceL=border+i*(interspace+bwidth)/band
