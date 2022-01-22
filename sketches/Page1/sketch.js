@@ -37,14 +37,14 @@ class block_for_repos{
                 encumbrance+=12 + 2*border// this is the default
                 if(encumbrance>height-2*border){
                     encumbrance-=12 + 2*border// this is the default
-                    limit=j-1
+                    limit=j
                     break
                 }
             }else{
                 encumbrance+=textWidth(Jsonclass[j].name)+2*border
                 if(encumbrance>width-2*border){
                     encumbrance-=textWidth(Jsonclass[j].name)+2*border
-                    limit=j-1
+                    limit=j
                     break
                 }
             }
@@ -72,9 +72,9 @@ class block_for_repos{
                 if(limit==len){
                     var bwidth = twidth
                 }else{
-                    var bwidth=twidth*width/encumbrance
+                    var bwidth=twidth*(width-2*border)/encumbrance
                 }
-                var bheight=height-2^border
+                var bheight=height-2*border
                 var spaceL=border+cumulative
                 var spaceU=border
                 cumulative+=interspace+bwidth
