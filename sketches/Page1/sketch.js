@@ -24,12 +24,14 @@ class Button_to_link{
     constructor(name,link,x,y){
         this.name = name
         this.html_url = link
+        console.log(link)
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.mousePressed(this.callback)
     }
 
     callback(){
+        
         window.open(this.html_url)
     }
 }
