@@ -33,7 +33,8 @@ class block_for_repos{
         background(51);
         canvas.position(ULCx,ULCy);
         for(i=0;i<len;i++){
-            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+border,ULCy+border+i*(height-2*border)/len,width,(height-2*border)/len)
+            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+border,
+                ULCy+border+i*(height-2*border)/len,width-border,(height-2*border)/len)
             this.list.push(temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
