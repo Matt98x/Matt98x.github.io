@@ -24,9 +24,9 @@ class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
         var len = Object.keys(Jsonclass).length
         this.list = []
-        canvas=createCanvas(width,height);
+        this.canvas=createCanvas(width,height);
         background(51);
-        canvas.position(ULCx,ULCy);
+        this.canvas.position(ULCx,ULCy);
         var encumbrance= 2*border
         var limit = 0
         for(var j=initind; j<len;j++){
