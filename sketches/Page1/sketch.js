@@ -33,15 +33,22 @@ class block_for_repos{
         background(51);
         canvas.position(ULCx,ULCy);
         for(i=0;i<len;i++){
+            width = width
+            height = height 
+            console.log(char("&#x2B07"))
             if(orientation=="vertical"){
-                var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+border,
-                ULCy+border+interspace+i*(height-2*border)/len,
-                width-2*border,(height-len*interspace-2*border)/len)
+                var bwidth=width-2*border
+                var bheight=(height-len*interspace-2*border)/len
+                var spaceL=border
+                var spaceU=border+interspace+i*(height-2*border)/len
             }else{
-                var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,
-                    ULCx+border+interspace+i*(width-2*border)/len,
-                    ULCy+border,(width-len*interspace-2*border)/len,height-2^border)
+                var bwidth=(width-len*interspace-2*border)/len
+                var bheight=height-2^border
+                var spaceL=border+interspace+i*(width-2*border)/len
+                var spaceU=border
             }
+            var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+spaceL,
+                ULCy+spaceU,bwidth,bheight)
             this.list.push(temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
