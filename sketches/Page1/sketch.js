@@ -10,7 +10,9 @@ function preload(){
     words = loadJSON(path)
 }
 
-function setup(){    
+function setup(){  
+    canvas=createCanvas(width,height);
+    background(0,0,0,0);  
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vartical",0)                                                                
 }
@@ -24,9 +26,9 @@ class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind){
         var len = Object.keys(Jsonclass).length
         this.list = []
-        this.canvas=createCanvas(width,height);
-        background(51);
-        this.canvas.position(ULCx,ULCy);
+        this.graphics = createGraphics(width,height)
+        this.graphics.fill(51)
+        this.graphics.position(ULCx,ULCy);
         var encumbrance= 2*border
         var limit = 0
         for(var j=initind; j<len;j++){
