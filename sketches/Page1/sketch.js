@@ -31,6 +31,7 @@ class block_menu{
         image(this.graphics,ULCx,ULCy)
         this.encumbrance= 2*border
         this.limit = 0
+        console.log(this.encumbrance)
         for(var j=initind; j<this.len;j++){
             if(orientation=="vertical"){
                 this.encumbrance+=12 + 2*border// this is the default
@@ -48,7 +49,7 @@ class block_menu{
                 }
             }
             this.limit=j+1
-            console.log(this.limit)
+            
         }
         console.log(str(this.encumbrance)+" "+str(width-2*border)+" "+this.limit)
         this.cumulative = 0
