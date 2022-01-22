@@ -99,7 +99,7 @@ class block_menu{
                 this.spaceU=border
                 this.cumulative+=interspace+this.bwidth
             }
-            this.temp = eval
+            this.temp = eval(func)
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
