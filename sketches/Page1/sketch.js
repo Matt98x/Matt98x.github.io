@@ -55,12 +55,14 @@ class Button_to_repo{
     }
     
     callback(){
-        console.log(this.y)
-        for(i=0;i<repositories.list.length;i++){
-            
-            if(repositories.list[i].x == this.x && repositories.list[i].y == this.y){
-                console.log(repositories.list[i])
-                window.open(repositories.list[i].html_url,'_self')
+        if(repositories){
+            console.log(this.y)
+            for(i=0;i<repositories.list.length;i++){
+                
+                if(repositories.list[i].x == this.x && repositories.list[i].y == this.y){
+                    console.log(repositories.list[i])
+                    window.open(repositories.list[i].html_url,'_self')
+                }
             }
         }
     }
