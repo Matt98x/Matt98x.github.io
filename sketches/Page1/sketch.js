@@ -15,7 +15,7 @@ function setup(){
     //     list[i].button.mousePressed(list[i].callback)
         
     // }
-    repositories=new block_for_repos(words,0,0,200,windowHeight,5,1,"horizontal",0)                                                                
+    repositories=new block_for_repos(words,0,0,windowWidth,200,5,1,"horizontal",0)                                                                
 }
 
 function draw(){
