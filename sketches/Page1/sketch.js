@@ -12,8 +12,11 @@ function preload(){
 
 function setup(){    
     
-    console.log(list)  
-    repo_list=new Repos_list(words,10,40,200,1300)                                                                  
+    
+    repo_list=new Repos_list(words,10,40,200,1300) 
+                                                                     
+                                                                     
+    console.log(repo_list)
 }
 
 function draw(){
