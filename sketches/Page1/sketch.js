@@ -32,7 +32,7 @@ class block_for_repos{
         canvas.position(ULCx,ULCy);
         var encumbrance=0
         var limit = 0
-        for(var j=initind; j<len;i++){
+        for(var j=initind; j<len;j++){
             if(orientation=="vertical"){
                 encumbrance+=12 + 2*interspace// this is the default
                 if(encumbrance>height-2*border){
