@@ -39,9 +39,10 @@ class Button_to_link{
     callback(){
         console.log(this.y)
         for(i=0;i<list.length;i++){
-            console.log(list[i])
+            
             if(list[i].x == this.x && list[i].y == this.y){
-                window.open('"'+str(i.html_url)+'"')
+                console.log(list[i])
+                window.open('"'+str(list[i].html_url)+'"')
             }
         }
     }
