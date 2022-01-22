@@ -12,7 +12,6 @@ function preload(){
 
 function setup(){  
     canvas=createCanvas(width,height);
-    background(0,0,0,0);  
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vartical",0)                                                                
 }
