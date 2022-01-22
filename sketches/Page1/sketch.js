@@ -11,7 +11,7 @@ function preload(){
 }
 
 function setup(){  
-    canvas=createCanvas(width,height);
+    canvas=createCanvas(windowWidth,windowHeight);
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0)
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vartical",0)                                                                
 }
@@ -27,7 +27,7 @@ class block_menu{
         this.list = []
         this.graphics = createGraphics(width,height)
         this.graphics.background(51)
-        this.graphics.position(ULCx,ULCy);
+        image(this.graphics,ULCx,ULCy)
         var encumbrance= 2*border
         var limit = 0
         for(var j=initind; j<len;j++){
