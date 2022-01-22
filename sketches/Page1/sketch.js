@@ -63,7 +63,7 @@ class block_for_repos{
                 }
                 var bwidth=width-2*border
                 var spaceL=border
-                var spaceU=border+i*(interspace+bhight)
+                var spaceU=border+i*(interspace+bheight)
             }else{
                 if(limit==len){
                     var bwidth = twidth
