@@ -24,15 +24,14 @@ class Button_to_link{
         //console.log('"'+str(this.html_url)+'"')     
         this.button=createButton(this.name)
         this.button.position(x,y)
-        this.button.mousePressed(this.callback(link))
+        this.button.mousePressed(callback(link))
         // this.callback=function(){
         //     console.log('"'+str(this.html_url)+'"')
         //     window.open('"'+str(this.html_url)+'"')
         // }
-        this.func=function(){
-            console.log('"'+str(link)+'"')
-        }
+        
     }
+
     callback(link){
         console.log('"'+str(link)+'"')
         window.open('"'+str(link)+'"')
