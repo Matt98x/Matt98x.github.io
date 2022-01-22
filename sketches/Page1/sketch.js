@@ -123,7 +123,7 @@ class Button_to_repo{
     
     callback(){
         if(repositories){
-            for(i=0;i<repositories.list.length;i++){
+            for(var i=0;i<repositories.list.length;i++){
                 
                 if(repositories.list[i].x == this.x && repositories.list[i].y == this.y){
                     window.open(repositories.list[i].html_url,'_self')
@@ -152,7 +152,7 @@ class Button_to_nav{
     
     callback(){
         if(nav_menu){
-            for(i=0;i<nav_menu.list.length;i++){
+            for(var i=0;i<nav_menu.list.length;i++){
                 
                 if(nav_menu.list[i].x == this.x && nav_menu.list[i].y == this.y){
                     window.open(nav_menu.list[i].html_url,'_self')
