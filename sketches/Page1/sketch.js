@@ -32,7 +32,7 @@ class block_for_repos{
         canvas.position(ULCx,ULCy);
         var encumbrance=0
         var limit = 0
-        for(j=initind; j<len;i++){
+        for(var j=initind; j<len;i++){
             if(orientation=="vertical"){
                 encumbrance+=12 + 2*interspace// this is the default
                 if(encumbrance>height-2*border){
@@ -47,7 +47,7 @@ class block_for_repos{
                 }
             }
         }
-        for(i=initind;i<limit;i++){
+        for(var i=initind;i<limit;i++){
             
             var twidth = textWidth(Jsonclass[i].name)+2*interspace
             var theight = 12 + 2*interspace// this is the default
