@@ -1,5 +1,5 @@
 var words
-
+var distancing = 20
 function preload(){
     path = '../../repos.json'
     words = loadJSON(path)
@@ -11,7 +11,7 @@ function setup(){
     for(i=0;i<Object.keys(words).length;i++){
         console.log(words[i].html_url)
         link = createA(words[i].html_url,words[i].name);
-        link.position(0,10*i)
+        link.position(0,distancing*i)
     }
 }
 
