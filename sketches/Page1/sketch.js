@@ -58,7 +58,6 @@ class block_menu{
                 }
             }
             this.limit=j+1
-            console.log(j)
         }
         this.cumulative = 0
         for(var i=initind;i<this.limit;i++){
