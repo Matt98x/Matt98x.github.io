@@ -1,10 +1,3 @@
-var button1;
-var button2;
-
-var fabio;
-var giuseppe;
-var matteo;
-var riccardo;
 
 
 var titolo;
@@ -30,13 +23,15 @@ function setup() {
  
   //Inizializzo la schermata
   titolo=createElement("h1","Sito WEB");
-  button1= createButton("Tasto di prova"); 
-  button1.mousePressed(submitWord);
-  
   titolo.position(10,0);
-    button1.position(10,80);
-    test=createInput();
+
+  button1.mousePressed(submitWord);
+  button1= createButton("Tasto di prova"); 
+  button1.position(10,80);
+
+  test=createInput();
   test.position(10,110);
+  
   button2=createButton("Apri");
   button2.position(200,110);
   
@@ -55,19 +50,19 @@ function setup() {
   
   function gotData(data){
      console.log(data);
-  var keys=Object.keys(data);
+      var keys=Object.keys(data);
   
-  r=keys.length;
-  background(255);
-  for(var i=0;i<keys.length;i++){
-    var word=keys[i];
-    var score=data[word];
-    //var test=createP(word);
-    //test.position(10,120+i*20);
-    fill(0);
-    textSize(dim);
-    text(word,0,dim+(dim+5)*i);
-  }
+    r=keys.length;
+    background(255);
+    for(var i=0;i<keys.length;i++){
+      var word=keys[i];
+      var score=data[word];
+      //var test=createP(word);
+      //test.position(10,120+i*20);
+      fill(0);
+      textSize(dim);
+      text(word,0,dim+(dim+5)*i);
+    }
   //console.log(word);
   }
   
