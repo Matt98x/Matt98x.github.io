@@ -42,7 +42,7 @@ class Button_to_repo{
             
             if(list[i].x == this.x && list[i].y == this.y){
                 console.log(list[i])
-                window.open(list[i].html_url)
+                window.open(list[i].html_url,'_self')
             }
         }
     }
