@@ -35,7 +35,7 @@ class Button_to_link{
     }
     
     callback(){
-        console.log(this.name)
+        console.log(this)
     }
 }
 
