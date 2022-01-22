@@ -17,7 +17,7 @@ function setup(){
     //     console.log(list[i].button)
     // }
     // console.log(list)    
-    repositories=new block_for_repos(words,0,0,200,300,5,1)                                                                
+    repositories=new block_for_repos(words,0,0,200,700,5,1)                                                                
 }
 
 function draw(){
