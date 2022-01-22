@@ -25,18 +25,17 @@ class Button_to_link{
         this.button=createButton(this.name)
         this.button.position(x,y)
         this.button.mousePressed(this.callback(link))
-        this.func()
         // this.callback=function(){
         //     console.log('"'+str(this.html_url)+'"')
         //     window.open('"'+str(this.html_url)+'"')
         // }
-        
+        this.func()=function(){
+            console.log('"'+str(link)+'"')
+        }
     }
     callback(link){
         console.log('"'+str(link)+'"')
         window.open('"'+str(link)+'"')
     }
-    func(){
-        console.log('"'+str(link)+'"')
-    }
+    
 }
