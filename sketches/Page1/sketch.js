@@ -30,7 +30,7 @@ class block_for_repos{
         canvas=createCanvas(width,height);
         background(51);
         canvas.position(ULCx,ULCy);
-        encumbrance=0
+        var encumbrance=0
         var limit = 0
         for(j=initind; j<len;i++){
             if(orientation=="vertical"){
