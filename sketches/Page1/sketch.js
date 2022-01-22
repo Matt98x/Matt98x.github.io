@@ -63,15 +63,15 @@ class block_for_repos{
                 }
                 var bwidth=width-2*border
                 var spaceL=border
-                var spaceU=border+i*bheight/band
+                var spaceU=border+i*(interspace+bhight)
             }else{
                 if(limit==len){
                     var bwidth = twidth
                 }else{
-                    var bwidth=(width-len*interspace-2*border)/band
+                    var bwidth=(width-len*interspace-2*border)
                 }
                 var bheight=height-2^border
-                var spaceL=border+interspace+i*bwidth/band
+                var spaceL=border+i*(interspace+bwidth)/band
                 var spaceU=border
             }
             var temp = new Button_to_repo(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+spaceL,
