@@ -12,9 +12,9 @@ function preload(){
 function setup(){  
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
-    stringComm="new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)"
+    stringComm='new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)'
     nav_menu=new block_menu(words,0,0,windowWidth,nav_height,5,1,"horizontal",0,stringComm)
-    stringComm="new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)"
+    stringComm='new Button_to_repo(func)(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)'
     repositories=new block_menu(words,0,nav_height,200,windowHeight,5,1,"vertical",0,stringComm)                                                                
 }
 
