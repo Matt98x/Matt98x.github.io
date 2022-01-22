@@ -50,7 +50,7 @@ class block_menu{
                 }
             }
             this.limit=j+1
-            
+            console.log(j)
         }
         console.log(str(this.encumbrance)+" "+str(height-2*border)+" "+this.limit)
         this.cumulative = 0
