@@ -58,14 +58,14 @@ function setup() {
 
 // Function in loop to handle any page modifications
 function draw() {
-    if(millis()>prevtime+2){
+    if (millis() > prevtime + 2) {
         goWiki() // update the github repository
     }
-     
+
     if (prevword != words) { // to check whether the github repository has changed
         mainscript() // reset
     }
-    if(prevWheight != windowHeight || prevWwidth != windowWidth){ // to check whether the window dimensions have changed
+    if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         mainscript() // reset 
     }
 }
