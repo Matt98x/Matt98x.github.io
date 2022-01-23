@@ -22,6 +22,7 @@ function preload() {
     loadJSON(path, got_data, 'jsonp')
     prevwords = word
 }
+
 function goWiki() {
     path = 'https://api.github.com/users/Matt98x/repos'
     loadJSON(path, got_data, 'jsonp')
@@ -54,7 +55,7 @@ function setup() {
 
 // Function in loop to handle any page modifications
 function draw() {
-    gotWiki()
+    goWiki()
     if (prevword != words) {
         mainscript()
     }
