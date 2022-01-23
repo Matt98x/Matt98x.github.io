@@ -50,7 +50,7 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
     mainscript()
-    prevtime = time()
+    prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
 }
@@ -58,7 +58,7 @@ function setup() {
 
 // Function in loop to handle any page modifications
 function draw() {
-    if(time()>prevtime+2){
+    if(millis()>prevtime+2){
         goWiki() // update the github repository
     }
      
