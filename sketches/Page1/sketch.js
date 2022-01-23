@@ -25,6 +25,7 @@ function got_data(data){
 }
 
 function setup(){  
+    goWiki()
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
     stringComm= "Button_to_nav"
