@@ -23,7 +23,7 @@ function goWiki(){
 }
 
 function got_data(data){
-    console.log(data)
+    console.log(data.data)
     words = data
 }
 
