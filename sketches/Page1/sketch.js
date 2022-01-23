@@ -23,7 +23,6 @@ function goWiki(){
 }
 
 function got_data(data){
-    console.log(data.data)
     words = data.data
 }
 
@@ -43,13 +42,12 @@ function setup(){
 }
 
 function draw(){
-
+    gotWiki()
 }
 
 class block_menu{
     constructor(Jsonclass,ULCx,ULCy,width,height,border,interspace,orientation, initind,func){
         this.len = Object.keys(Jsonclass).length
-        console.log(Jsonclass)
         this.list = []
         this.graphics = createGraphics(width,height)
         this.graphics.background(51)
