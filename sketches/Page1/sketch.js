@@ -16,7 +16,7 @@ var  nav_json=[{
 nav_height=100
 function goWiki(){
     path = 'https://api.github.com/users/Matt98x/repos'
-    loadJSON(path,got_data)
+    loadJSON(path,got_data,'jsonp')
 }
 
 function got_data(data){
