@@ -14,6 +14,9 @@ var  nav_json=[{
 ]
 
 nav_height=100
+function preload(){
+    goWiki()
+}
 function goWiki(){
     path = 'https://api.github.com/users/Matt98x/repos'
     loadJSON(path,got_data,'jsonp')
@@ -25,7 +28,6 @@ function got_data(data){
 }
 
 function setup(){  
-    goWiki()
     canvas=createCanvas(windowWidth,windowHeight);
     canvas.position(0,0)
     stringComm= "Button_to_nav"
