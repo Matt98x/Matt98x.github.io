@@ -24,7 +24,7 @@ function goWiki(){
 
 function got_data(data){
     console.log(data.data)
-    words = data
+    words = data.data
 }
 
 function setup(){  
