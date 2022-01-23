@@ -4,7 +4,9 @@ var nav_menu // navigation menu object
 var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
-nav_height = 100 // height of the navigation menu
+var nav_height = 100 // height of the navigation menu
+var prevtime
+
 
 var nav_json = [{
     "name": "Home",
@@ -48,6 +50,7 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
     mainscript()
+    prevtime = time()
     prevWheight = windowHeight
     prevWwidth = windowWidth
 }
@@ -55,12 +58,15 @@ function setup() {
 
 // Function in loop to handle any page modifications
 function draw() {
-    goWiki()
-    if (prevword != words) {
-        mainscript()
+    if(time()>prevtime+2){
+        goWiki() // update the github repository
     }
-    if(prevWheight != windowHeight || prevWwidth != windowWidth){
-        mainscript()
+     
+    if (prevword != words) { // to check whether the github repository has changed
+        mainscript() // reset
+    }
+    if(prevWheight != windowHeight || prevWwidth != windowWidth){ // to check whether the window dimensions have changed
+        mainscript() // reset 
     }
 }
 
