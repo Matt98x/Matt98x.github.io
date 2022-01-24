@@ -68,6 +68,8 @@ function draw() {
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         //mainscript() // reset 
         console.log("The screen size have changed")
+        prevWheight = windowHeight
+        prevWwidth = windowWidth
     }
 }
 
