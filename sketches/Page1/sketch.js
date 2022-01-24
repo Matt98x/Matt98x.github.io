@@ -20,8 +20,7 @@ var nav_json = [{
 
 
 function preload() {
-    path = 'https://api.github.com/users/Matt98x/repos'
-    loadJSON(path, got_data, 'jsonp')
+    goWiki()
     prevwords = words
 }
 
