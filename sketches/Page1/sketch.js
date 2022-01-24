@@ -20,7 +20,7 @@ var nav_json = [{
 
 
 function preload() {
-    //goWiki()
+    goWiki()
     prevwords = words
 }
 
@@ -69,7 +69,7 @@ function draw() {
         console.log("The screen size have changed")
         prevWheight = windowHeight
         prevWwidth = windowWidth
-        mainscript()
+        //mainscript()
     }
 }
 
