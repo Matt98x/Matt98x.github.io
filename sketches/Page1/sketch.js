@@ -43,6 +43,7 @@ function mainscript() {
             break
         }
     }
+    console.log("updated script")
 }
 
 function setup() {
