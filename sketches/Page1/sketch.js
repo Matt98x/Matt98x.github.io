@@ -167,7 +167,7 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.field = 3
+        //this.button.field = 3
 
     }
 
@@ -200,7 +200,7 @@ class Button_to_nav {
     }
 
     callback() {
-        console.log(this.field)
+        //console.log(this.field)
         if (nav_menu) {
             for (var i = 0; i < nav_menu.list.length; i++) {
 
