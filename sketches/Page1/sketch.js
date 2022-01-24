@@ -20,7 +20,7 @@ var nav_json = [{
 
 
 function preload() {
-    goWiki()
+    //goWiki()
     prevwords = words
 }
 
