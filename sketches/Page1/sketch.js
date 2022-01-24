@@ -40,9 +40,9 @@ function mainscript() {
         if (nav_json && words) {
             resizeCanvas(windowWidth, windowHeight)
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height*windowHeight/firstHeight, 5, 1, "horizontal", 0, stringComm)
+            nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height * windowHeight / firstHeight, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height, 200*windowWidth/firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height, 200 * windowWidth / firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
             break
         }
     }
@@ -51,12 +51,13 @@ function mainscript() {
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
+    firstHeight = windowHeight
+    firstWidth = windowWidth
     mainscript()
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    firstHeight = windowHeight
-    firstWidth = windowWidth
+
 }
 
 
@@ -70,7 +71,6 @@ function draw() {
     //     mainscript() // reset
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
-        //mainscript() // reset 
         prevWheight = windowHeight
         prevWwidth = windowWidth
         mainscript()
