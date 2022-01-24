@@ -5,6 +5,7 @@ var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
 var nav_height = 100 // height of the navigation menu
+var repowigth = 200 // width of the repository list
 var firstWidth
 var firstHeight
 var prevtime
@@ -42,7 +43,7 @@ function mainscript() {
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height * windowHeight / firstHeight, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height, 200 * windowWidth / firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height * windowHeight / firstHeight, 200 * windowWidth / firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
             break
         }
     }
