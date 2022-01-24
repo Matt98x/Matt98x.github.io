@@ -36,6 +36,7 @@ function got_data(data) {
 function mainscript() {
     while (true) {
         if (nav_json && words) {
+            resizeCanvas(windowWidth,windowHeight)
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
