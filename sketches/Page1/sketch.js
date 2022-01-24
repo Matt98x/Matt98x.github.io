@@ -51,6 +51,7 @@ function mainscript() {
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
+    background(255)
     firstHeight = windowHeight
     firstWidth = windowWidth
     mainscript()
@@ -73,6 +74,7 @@ function draw() {
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         prevWheight = windowHeight
         prevWwidth = windowWidth
+        background(255)
         mainscript()
     }
 }
