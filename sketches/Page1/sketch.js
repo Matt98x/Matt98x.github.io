@@ -70,6 +70,7 @@ function draw() {
         console.log("The screen size have changed")
         prevWheight = windowHeight
         prevWwidth = windowWidth
+        mainscript()
     }
 }
 
