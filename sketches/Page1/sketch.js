@@ -5,6 +5,8 @@ var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
 var nav_height = 100 // height of the navigation menu
+var firstWidth
+var firstHeight
 var prevtime
 
 
@@ -36,15 +38,14 @@ function got_data(data) {
 function mainscript() {
     while (true) {
         if (nav_json && words) {
-            resizeCanvas(windowWidth,windowHeight)
+            resizeCanvas(windowWidth, windowHeight)
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height, 5, 1, "horizontal", 0, stringComm)
+            nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height*windowHeight/firstHeight, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height, 200, windowHeight, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height, 200*windowWidth/firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
             break
         }
     }
-    console.log("updated script")
 }
 
 function setup() {
@@ -54,6 +55,8 @@ function setup() {
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
+    firstHeight = windowHeight
+    firstWidth = windowWidth
 }
 
 
@@ -68,7 +71,6 @@ function draw() {
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         //mainscript() // reset 
-        console.log("The screen size have changed")
         prevWheight = windowHeight
         prevWwidth = windowWidth
         mainscript()
@@ -168,19 +170,20 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        //this.button.field = 3
+        this.button.field = 3
 
     }
 
     callback() {
-        if (repositories) {
-            for (var i = 0; i < repositories.list.length; i++) {
+        console.log(this.field)
+        // if (repositories) {
+        //     for (var i = 0; i < repositories.list.length; i++) {
 
-                if (repositories.list[i].x == this.x && repositories.list[i].y == this.y) {
-                    window.open(repositories.list[i].html_url, '_self')
-                }
-            }
-        }
+        //         if (repositories.list[i].x == this.x && repositories.list[i].y == this.y) {
+        //             window.open(repositories.list[i].html_url, '_self')
+        //         }
+        //     }
+        // }
     }
 }
 
