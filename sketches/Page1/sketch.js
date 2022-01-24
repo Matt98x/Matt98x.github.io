@@ -72,10 +72,10 @@ function draw() {
     //     mainscript() // reset
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
-        prevWheight = windowHeight
-        prevWwidth = windowWidth
-        background(255)
-        mainscript()
+        prevWheight = windowHeight // store the current value as the previous
+        prevWwidth = windowWidth // store the current value as the previous
+        background(255) // refresh the canvas
+        mainscript() // reset the view
     }
 }
 
