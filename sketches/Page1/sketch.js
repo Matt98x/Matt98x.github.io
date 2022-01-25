@@ -70,7 +70,7 @@ function mainscript(ww, wh) {
 function cleanup() {
     removeElements() // remove all html elements
 }
-
+ 
 // Setup function of the script
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
