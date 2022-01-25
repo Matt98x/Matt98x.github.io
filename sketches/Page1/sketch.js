@@ -167,6 +167,7 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
+            console.log(this.multiplier)
             this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)", 12*this.multiplier)
             
             this.list.push(this.temp)
