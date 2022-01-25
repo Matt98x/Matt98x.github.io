@@ -91,12 +91,14 @@ function setup() {
             // 173 Min Key  hyphen/underscor Hey
             // 61 Plus key  +/= key
         })
+    var el = window.getSelection().parentNode.selectAllChildren(document.firstChild)
+    el.mouseWheel(zoomDisable)
         
-    window.bind('mousewheel DOMMouseScroll', function (event) {
-            if (event.ctrlKey == true) {
-            event.preventDefault();
-            }
-    })
+}
+
+    
+function zoomDisable(event){
+    event.preventDefault()
 }
 
 
