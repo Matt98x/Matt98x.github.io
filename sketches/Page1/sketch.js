@@ -181,9 +181,9 @@ class block_menu {
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             
-            this.textsize = 12*expasionCoeff
-            console.log(this.textsize)
-            this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)", this.textsize)
+            this.apple = str(12*expasionCoeff)+'px'
+            console.log(this.apple)
+            this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)", this.apple)
 
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
@@ -205,7 +205,7 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.style('font-size', str(textsize) + 'px')
+        this.button.style('font-size', textsize)
         this.button.field = 3
 
     }
