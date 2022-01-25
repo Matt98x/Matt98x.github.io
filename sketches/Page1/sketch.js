@@ -188,8 +188,6 @@ class block_menu {
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             
-            this.apple = str(12*expasionCoeff)+'px'
-            console.log(this.apple)
             this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
             this.temp.button.style('font-size',this.apple)
             this.list.push(this.temp)
@@ -242,8 +240,6 @@ class Button_to_nav {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        var sizer=str(textsize)+'px'
-        console.log(sizer)
         this.button.style('font-size', textsize)
     }
 
