@@ -236,9 +236,9 @@ class Button_to_nav {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.style('font-size', str(textsize) + 'px')
-        console.log(str(textsize) + 'px')
-
+        var sizer=str(textsize)+'px'
+        console.log(sizer)
+        this.button.style('font-size', textsize)
     }
 
     callback() {
