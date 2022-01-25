@@ -39,7 +39,7 @@ function got_data(data) {
 }
 
 // Main script of the page
-function mainscript(ww,wh) {
+function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_nav"
@@ -52,7 +52,7 @@ function mainscript(ww,wh) {
 }
 
 // Function to delete every html elements
-function cleanup(){
+function cleanup() {
     removeElements() // remove all html elements
 }
 
@@ -66,7 +66,7 @@ function setup() {
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    mainscript(prevWwidth,prevWheight)
+    mainscript(prevWwidth, prevWheight)
 }
 
 
@@ -86,7 +86,7 @@ function draw() {
         prevWwidth = windowWidth // store the current value as the previous
         resizeCanvas(windowWidth, windowHeight)
         background(255) // refresh the canvas
-        mainscript(windowWidth,windowHeight) // reset the view
+        mainscript(windowWidth, windowHeight) // reset the view
     }
 }
 
@@ -133,6 +133,7 @@ class block_menu {
             this.twidth = textWidth(Jsonclass[i].name) + 3 * border
             this.theight = 12 + 2 * border// this 12 is the default textSize
             if (orientation == "vertical") {
+                
                 if (this.limit == this.len) {
                     this.bheight = this.theight
                 } else {
@@ -142,6 +143,7 @@ class block_menu {
                 this.spaceL = border
                 this.spaceU = border + this.cumulative
                 this.cumulative += interspace + this.bheight
+                this.multiplier = (height - 2 * border) / this.encumbrance
             } else if (orientation == "horizontal") {
                 if (this.limit == this.len) {
                     this.bwidth = this.twidth
@@ -152,6 +154,7 @@ class block_menu {
                 this.spaceL = border + this.cumulative
                 this.spaceU = border
                 this.cumulative += interspace + this.bwidth
+                this.multiplier = (width - 2 * border) / this.encumbrance
             } else {
                 if (this.limit == this.len) {
                     this.bwidth = this.twidth
@@ -162,8 +165,10 @@ class block_menu {
                 this.spaceL = border + this.cumulative
                 this.spaceU = border
                 this.cumulative += interspace + this.bwidth
+                this.multiplier = (width - 2 * border) / this.encumbrance
             }
             this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
+            this.temp.style('font-size', str(this.multiplier)+'px')
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
