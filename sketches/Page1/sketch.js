@@ -81,26 +81,22 @@ function setup() {
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    mainscript(prevWwidth, prevWheight)
-    document.body.addEventListener("wheel", zoomShortcut); //add the event
-    
-        
+    mainscript(prevWwidth, prevWheight)    
+    window.addEventListener('resize', reportWindowSize);
+
 }
 
+function reportWindowSize(){
+    console.log("I'm called")
+    cleanup()
+    expasionCoeff=windowHeight/prevWheight
+    prevWheight = windowHeight // store the current value as the previous
+    prevWwidth = windowWidth // store the current value as the previous
+    resizeCanvas(windowWidth, windowHeight)
+    background(255) // refresh the canvas
+    mainscript(windowWidth, windowHeight) // reset the view
+}
 
-function zoomShortcut(e){
-    if(e.ctrlKey){            //[ctrl] pressed?
-      event.preventDefault();  //prevent zoom
-      if(e.deltaY<0){        //scrolling up?
-                              //do something..
-        return false;
-      }
-      if(e.deltaY>0){        //scrolling down?
-                              //do something..
-        return false;
-      }
-    }
-  }
 
 // Function in loop to handle any page modifications
 function draw() {
@@ -108,22 +104,7 @@ function draw() {
         //goWiki() // update the github repository
     }
 
-    // if (prevword != words) { // to check whether the github repository has changed
-    //     mainscript() // reset
-    // }
-    if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
-        //window.resizeTo(prevWwidth,prevWheight)
-        document.body.style.width = str(prevWwidth)+'px'
-        document.body.style.height = str(prevWheight)+'px'
-        // console.log("I'm called")
-        // cleanup()
-        // expasionCoeff=windowHeight/prevWheight
-        // prevWheight = windowHeight // store the current value as the previous
-        // prevWwidth = windowWidth // store the current value as the previous
-        // resizeCanvas(windowWidth, windowHeight)
-        // background(255) // refresh the canvas
-        // mainscript(windowWidth, windowHeight) // reset the view
-    }
+   
 }
 
 
