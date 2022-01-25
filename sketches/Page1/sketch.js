@@ -84,7 +84,7 @@ function draw() {
         cleanup()
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
-        canvas.resizeCanvas(windowWidth, windowHeight)
+        resizeCanvas(windowWidth, windowHeight)
         background(255) // refresh the canvas
         mainscript(windowWidth,windowHeight) // reset the view
     }
