@@ -64,10 +64,12 @@ function setup() {
     background(255)
     firstHeight = windowHeight
     firstWidth = windowWidth
-    mainscript()
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
+    cleanup()
+    mainscript()
+    
 
 }
 
@@ -83,6 +85,7 @@ function draw() {
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         console.log("I'm called")
+        cleanup()
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
         background(255) // refresh the canvas
