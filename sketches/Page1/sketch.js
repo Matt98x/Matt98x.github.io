@@ -92,7 +92,7 @@ function draw() {
     //     mainscript() // reset
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
-        window.resizeTo(prevWwidth,prevWwidth)
+        window.resizeTo(prevWwidth,prevWheight)
         // console.log("I'm called")
         // cleanup()
         // expasionCoeff=windowHeight/prevWheight
