@@ -37,6 +37,12 @@ function preload() {
 
     goWiki()
     prevwords = words
+
+
+
+    var viewportmeta = document.querySelector('meta[name="viewport"]');
+    viewportmeta.content = 'user-scalable=NO, width=device-width, initial-scale=1.0'
+
 }
 
 // Function to get the list of github repositories
@@ -105,6 +111,9 @@ function draw() {
         // mainscript(windowWidth, windowHeight) // reset the view
     }
 }
+
+
+
 
 // Class to display a button menu
 class block_menu {
