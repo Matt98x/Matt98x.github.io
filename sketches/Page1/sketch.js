@@ -42,7 +42,6 @@ function got_data(data) {
 function mainscript() {
     while (true) {
         if (nav_json && words) {
-            resizeCanvas(windowWidth, windowHeight)
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height * windowHeight / firstHeight, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
@@ -88,6 +87,7 @@ function draw() {
         cleanup()
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
+        canvas.resizeCanvas(windowWidth, windowHeight)
         background(255) // refresh the canvas
         mainscript() // reset the view
     }
