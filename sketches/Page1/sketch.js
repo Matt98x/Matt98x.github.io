@@ -21,17 +21,19 @@ var nav_json = [{
 }
 ]
 
-
+// Preload function to get any stored data
 function preload() {
     goWiki()
     prevwords = words
 }
 
+// Function to get the list of github repositories
 function goWiki() {
     path = 'https://api.github.com/users/Matt98x/repos'
     loadJSON(path, got_data, 'jsonp')
 }
 
+// Callback to store the list of repositories
 function got_data(data) {
     words = data.data
 }
@@ -40,6 +42,9 @@ function got_data(data) {
 function mainscript() {
     while (true) {
         if (nav_json && words) {
+            canvas = createCanvas(windowWidth, windowHeight);
+            canvas.position(0, 0)
+            background(255)
             resizeCanvas(windowWidth, windowHeight)
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height * windowHeight / firstHeight, 5, 1, "horizontal", 0, stringComm)
@@ -52,14 +57,12 @@ function mainscript() {
 
 // Function to delete every html elements
 function cleanup(){
-    removeElements()
+    remove()
 }
 
 // Setup function of the script
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
-    canvas.position(0, 0)
-    background(255)
+    
     firstHeight = windowHeight
     firstWidth = windowWidth
     cleanup()
@@ -166,6 +169,7 @@ class block_menu {
             this.list[i].button.mousePressed(this.list[i].callback)
         }
     }
+
 }
 
 // Function to create a button in the repositories menu
