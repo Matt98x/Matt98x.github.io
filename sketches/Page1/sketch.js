@@ -64,7 +64,6 @@ function setup() {
     background(255)
     firstHeight = windowHeight
     firstWidth = windowWidth
-    cleanup()
     mainscript()
     prevtime = millis()
     prevWheight = windowHeight
@@ -82,8 +81,8 @@ function draw() {
     // if (prevword != words) { // to check whether the github repository has changed
     //     mainscript() // reset
     // }
-    if (
-        prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
+    if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
+        console.log("I'm called")
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
         background(255) // refresh the canvas
