@@ -30,7 +30,7 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     path = 'https://api.github.com/users/Matt98x/repos'
-    loadJSON(path, got_data, 'jsonp')
+    //loadJSON(path, got_data, 'jsonp')
 }
 
 // Callback to store the list of repositories
