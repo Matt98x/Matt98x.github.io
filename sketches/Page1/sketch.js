@@ -57,12 +57,14 @@ function mainscript() {
 
 // Function to delete every html elements
 function cleanup(){
-    remove()
+    remove() // remove all html elements
 }
 
 // Setup function of the script
 function setup() {
-    
+    canvas = createCanvas(windowWidth, windowHeight);
+    canvas.position(0, 0)
+    background(255)
     firstHeight = windowHeight
     firstWidth = windowWidth
     cleanup()
@@ -83,7 +85,8 @@ function draw() {
     // if (prevword != words) { // to check whether the github repository has changed
     //     mainscript() // reset
     // }
-    if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
+    if (
+        prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
         background(255) // refresh the canvas
