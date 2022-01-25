@@ -39,13 +39,13 @@ function got_data(data) {
 }
 
 // Main script of the page
-function mainscript() {
+function mainscript(ww,wh) {
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, windowWidth, nav_height * windowHeight / firstHeight, 5, 1, "horizontal", 0, stringComm)
+            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height * wh / firstHeight, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height * windowHeight / firstHeight, 200 * windowWidth / firstWidth, windowHeight, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height * wh / firstHeight, 200 * ww / firstWidth, wh, 5, 1, "vertical", 0, stringComm)
             break
         }
     }
@@ -67,7 +67,7 @@ function setup() {
     prevWheight = windowHeight
     prevWwidth = windowWidth
     cleanup()
-    mainscript()
+    mainscript(windowWidth,windowHeight)
     
 
 }
@@ -89,7 +89,7 @@ function draw() {
         prevWwidth = windowWidth // store the current value as the previous
         canvas.resizeCanvas(windowWidth, windowHeight)
         background(255) // refresh the canvas
-        mainscript() // reset the view
+        mainscript(windowWidth,windowHeight) // reset the view
     }
 }
 
