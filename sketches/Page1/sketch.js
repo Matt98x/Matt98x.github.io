@@ -67,9 +67,7 @@ function setup() {
     prevWheight = windowHeight
     prevWwidth = windowWidth
     cleanup()
-    mainscript(windowWidth,windowHeight)
-    
-
+    mainscript(prevWwidth,prevWheight)
 }
 
 
