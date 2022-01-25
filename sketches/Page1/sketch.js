@@ -92,14 +92,15 @@ function draw() {
     //     mainscript() // reset
     // }
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
-        console.log("I'm called")
-        cleanup()
-        expasionCoeff=windowHeight/prevWheight
-        prevWheight = windowHeight // store the current value as the previous
-        prevWwidth = windowWidth // store the current value as the previous
-        resizeCanvas(windowWidth, windowHeight)
-        background(255) // refresh the canvas
-        mainscript(windowWidth, windowHeight) // reset the view
+        window.resizeTo(prevWwidth,prevWwidth)
+        // console.log("I'm called")
+        // cleanup()
+        // expasionCoeff=windowHeight/prevWheight
+        // prevWheight = windowHeight // store the current value as the previous
+        // prevWwidth = windowWidth // store the current value as the previous
+        // resizeCanvas(windowWidth, windowHeight)
+        // background(255) // refresh the canvas
+        // mainscript(windowWidth, windowHeight) // reset the view
     }
 }
 
