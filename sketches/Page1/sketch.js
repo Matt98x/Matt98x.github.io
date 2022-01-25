@@ -36,6 +36,7 @@ function got_data(data) {
     words = data.data
 }
 
+// Main script of the page
 function mainscript() {
     while (true) {
         if (nav_json && words) {
@@ -49,12 +50,19 @@ function mainscript() {
     }
 }
 
+// Function to delete every html elements
+function cleanup(){
+    removeElements()
+}
+
+// Setup function of the script
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
     background(255)
     firstHeight = windowHeight
     firstWidth = windowWidth
+    cleanup()
     mainscript()
     prevtime = millis()
     prevWheight = windowHeight
