@@ -168,7 +168,7 @@ class block_menu {
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
-            this.temp.style('font-size', str(this.multiplier)+'px')
+            
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
@@ -178,7 +178,7 @@ class block_menu {
 
 // Function to create a button in the repositories menu
 class Button_to_repo {
-    constructor(name, link, x, y, width, height) {
+    constructor(name, link, x, y, width, height,textsize) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -189,6 +189,7 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
+        this.button.style('font-size', str(textsize)+'px')
         this.button.field = 3
 
     }
