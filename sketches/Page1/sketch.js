@@ -9,7 +9,8 @@ var repowigth = 200 // width of the repository list
 var firstWidth
 var firstHeight
 var prevtime
-
+var reloadCount
+var expasionCoeff = 1
 
 var nav_json = [{
     "name": "Home",
@@ -23,6 +24,17 @@ var nav_json = [{
 
 // Preload function to get any stored data
 function preload() {
+    var state = history.state || {}
+    reloadCount = state.reloadCount || 0
+    if (performance.navigation.type == 1) {
+        state.reloadCount = ++reloadCount
+        history.replaceState(state, null, document.URL)
+    } else if (reloadCount) {
+        delete state.reloadCount
+        reloadCount = 0
+        history.replaceState(state, null, document.URL)
+    }
+
     goWiki()
     prevwords = words
 }
@@ -82,6 +94,7 @@ function draw() {
     if (prevWheight != windowHeight || prevWwidth != windowWidth) { // to check whether the window dimensions have changed
         console.log("I'm called")
         cleanup()
+        expasionCoeff=windowHeight/prevWheight
         prevWheight = windowHeight // store the current value as the previous
         prevWwidth = windowWidth // store the current value as the previous
         resizeCanvas(windowWidth, windowHeight)
@@ -133,7 +146,7 @@ class block_menu {
             this.twidth = textWidth(Jsonclass[i].name) + 3 * border
             this.theight = 12 + 2 * border// this 12 is the default textSize
             if (orientation == "vertical") {
-                
+
                 if (this.limit == this.len) {
                     this.bheight = this.theight
                 } else {
@@ -167,9 +180,11 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
-            console.log(this.multiplier)
-            this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)", 12*this.multiplier)
             
+            this.textsize = 12*expasionCoeff
+            console.log(this.textsize)
+            this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)", this.textsize)
+
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
@@ -179,7 +194,7 @@ class block_menu {
 
 // Function to create a button in the repositories menu
 class Button_to_repo {
-    constructor(name, link, x, y, width, height,textsize) {
+    constructor(name, link, x, y, width, height, textsize) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -190,7 +205,7 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.style('font-size', str(textsize)+'px')
+        this.button.style('font-size', str(textsize) + 'px')
         this.button.field = 3
 
     }
@@ -210,7 +225,7 @@ class Button_to_repo {
 
 // Class to handle the buttons in the navigation menu
 class Button_to_nav {
-    constructor(name, link, x, y, width, height,textsize) {
+    constructor(name, link, x, y, width, height, textsize) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -221,8 +236,8 @@ class Button_to_nav {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.style('font-size', str(textsize)+'px')
-        console.log( str(textsize)+'px')
+        this.button.style('font-size', str(textsize) + 'px')
+        console.log(str(textsize) + 'px')
 
     }
 
