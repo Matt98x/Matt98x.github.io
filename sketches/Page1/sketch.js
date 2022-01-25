@@ -209,7 +209,7 @@ class Button_to_repo {
 
 // Class to handle the buttons in the navigation menu
 class Button_to_nav {
-    constructor(name, link, x, y, width, height) {
+    constructor(name, link, x, y, width, height,textsize) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -220,6 +220,8 @@ class Button_to_nav {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
+        this.button.style('font-size', str(textsize)+'px')
+        console.log( str(textsize)+'px')
 
     }
 
