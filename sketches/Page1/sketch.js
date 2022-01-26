@@ -205,7 +205,7 @@ class Button_of_menu {
         this.button.position(x, y)
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
-        this.func = func
+        this.button.func = func
     }
     callback() {
         this.func()
