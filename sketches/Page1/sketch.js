@@ -1,4 +1,4 @@
-var words = [{"name":"","html_url":"reule"}] // Github repositories object
+var words = [{ "name": "", "html_url": "reule" }] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
@@ -57,11 +57,11 @@ function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_repo"
-            left_menu = new block_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,callback_repo_list) 
+            left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0, callback_repo_list)
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height , 5, 1, "horizontal", 0, callback_nav)
+            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0, callback_nav)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height , repowidth , wh, 5, 1, "vertical", 0, callback_repo_list)
+            repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0, callback_repo_list)
             break
         }
     }
@@ -71,7 +71,7 @@ function mainscript(ww, wh) {
 function cleanup() {
     removeElements() // remove all html elements
 }
- 
+
 // Setup function of the script
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
@@ -80,11 +80,11 @@ function setup() {
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    mainscript(prevWwidth, prevWheight)    
+    mainscript(prevWwidth, prevWheight)
     window.addEventListener('resize', reportWindowSize)
 }
 
-function reportWindowSize(){
+function reportWindowSize() {
     cleanup() // Function to clean up the page
     prevWheight = windowHeight // store the current value as the previous
     prevWwidth = windowWidth // store the current value as the previous
@@ -96,7 +96,7 @@ function reportWindowSize(){
 
 // Function in loop to handle any page modifications
 function draw() {
-    
+
 }
 
 
@@ -179,23 +179,21 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
-            this.temp = new Button_of_menu(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)
+            this.temp = new Button_of_menu(Jsonclass[i].name, Jsonclass[i].html_url, ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight, func)
             this.list.push(this.temp)
             this.func = func
             this.field = 3
-            this.list[i].button.mousePressed(this.callback)
+            
         }
     }
 
-    callback(){
-        this.func()
-    }
+
 
 }
 
 // Function to create a button in the menu
 class Button_of_menu {
-    constructor(name, link, x, y, width, height) {
+    constructor(name, link, x, y, width, height, func) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -206,7 +204,12 @@ class Button_of_menu {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-    } 
+        this.button.mousePressed(this.callback)
+        this.func = func
+    }
+    callback() {
+        this.func()
+    }
 }
 
 
