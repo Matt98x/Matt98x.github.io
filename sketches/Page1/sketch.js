@@ -54,15 +54,14 @@ function got_data(data) {
 
 // Main script of the page
 function mainscript(ww, wh) {
-    console.log("Hi")
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_repo"
-            left_menu = new block_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,stringComm) 
+            left_menu = new block_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,callback_repo_list) 
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height , 5, 1, "horizontal", 0, stringComm)
+            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height , 5, 1, "horizontal", 0, callback_nav)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height , repowidth , wh, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height , repowidth , wh, 5, 1, "vertical", 0, callback_repo_list)
             break
         }
     }
@@ -180,17 +179,17 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
-            this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
+            this.temp = new Button_of_menu(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)
             this.list.push(this.temp)
-            this.list[i].button.mousePressed(this.list[i].callback)
+            this.list[i].button.mousePressed(func)
         }
     }
 
 }
 
-// Function to create a button in the repositories menu
-class Button_to_repo {
-    constructor(name, link, x, y, width, height, textsize) {
+// Function to create a button in the menu
+class Button_of_menu {
+    constructor(name, link, x, y, width, height) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -201,51 +200,32 @@ class Button_to_repo {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.field = 3
-
-    }
-
-    callback() {
-        console.log(this.field)
-        // if (repositories) {
-        //     for (var i = 0; i < repositories.list.length; i++) {
-
-        //         if (repositories.list[i].x == this.x && repositories.list[i].y == this.y) {
-        //             window.open(repositories.list[i].html_url, '_self')
-        //         }
-        //     }
-        // }
-    }
+        this.field = 3
+    } 
 }
 
-// Class to handle the buttons in the navigation menu
-class Button_to_nav {
-    constructor(name, link, x, y, width, height, textsize) {
-        this.name = name
-        this.html_url = link
-        this.x = x
-        this.y = y
-        this.width = width
-        this.height = height
 
-        this.button = createButton(this.name)
-        this.button.position(x, y)
-        this.button.size(width, height)
-        this.button.style('font-size', textsize)
-    }
 
-    callback() {
-        //console.log(this.field)
-        if (nav_menu) {
-            for (var i = 0; i < nav_menu.list.length; i++) {
+function callback_nav() {
+    //console.log(this.field)
+    if (nav_menu) {
+        for (var i = 0; i < nav_menu.list.length; i++) {
 
-                if (nav_menu.list[i].x == this.x && nav_menu.list[i].y == this.y) {
-                    window.open(nav_menu.list[i].html_url, '_self')
-                }
+            if (nav_menu.list[i].x == this.x && nav_menu.list[i].y == this.y) {
+                window.open(nav_menu.list[i].html_url, '_self')
             }
         }
     }
 }
 
+function callback_repo_list() {
+    console.log(this.field)
+    // if (repositories) {
+    //     for (var i = 0; i < repositories.list.length; i++) {
 
-
+    //         if (repositories.list[i].x == this.x && repositories.list[i].y == this.y) {
+    //             window.open(repositories.list[i].html_url, '_self')
+    //         }
+    //     }
+    // }
+}
