@@ -184,7 +184,6 @@ class block_menu {
             this.func = func
             this.field = 3
             this.list[i].button.mousePressed(this.callback)
-            
         }
     }
 
@@ -225,7 +224,7 @@ function callback_nav() {
 }
 
 function callback_repo_list() {
-    console.log(this)
+    console.log(this.field)
     // if (repositories) {
     //     for (var i = 0; i < repositories.list.length; i++) {
 
