@@ -1,4 +1,3 @@
-
 // Class to display a button menu
 class block_menu {
     constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind, func) {
