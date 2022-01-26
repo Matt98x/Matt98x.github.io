@@ -183,7 +183,7 @@ class block_menu {
             this.list.push(this.temp)
             this.func = func
             this.field = 3
-            
+
         }
     }
 
@@ -206,6 +206,7 @@ class Button_of_menu {
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
         this.button.func = func
+        this.button.field = 3
     }
     callback() {
         this.func()
