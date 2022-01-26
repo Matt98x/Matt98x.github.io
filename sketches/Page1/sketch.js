@@ -5,12 +5,11 @@ var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
 var nav_height = 100 // height of the navigation menu
-var repowigth = 200 // width of the repository list
-var firstWidth
-var firstHeight
+var repowidth = 200 // width of the repository list
 var prevtime
 var reloadCount
 var expasionCoeff = 1
+var wcopy = words
 
 var nav_json = [{
     "name": "Home",
@@ -56,10 +55,12 @@ function got_data(data) {
 function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
+            stringComm = "Button_to_repo"
+            left_menu = new left_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,stringComm) 
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height , 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height , 200 , wh, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height , repowidth , wh, 5, 1, "vertical", 0, stringComm)
             break
         }
     }
@@ -75,20 +76,15 @@ function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
     background(255)
-    firstHeight = windowHeight
-    firstWidth = windowWidth
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
     mainscript(prevWwidth, prevWheight)    
-    window.addEventListener('resize', reportWindowSize);
-
+    window.addEventListener('resize', reportWindowSize)
 }
 
 function reportWindowSize(){
-    console.log("I'm called")
-    cleanup()
-    expasionCoeff=windowHeight/prevWheight
+    cleanup() // Function to clean up the page
     prevWheight = windowHeight // store the current value as the previous
     prevWwidth = windowWidth // store the current value as the previous
     resizeCanvas(windowWidth, windowHeight)
@@ -99,11 +95,7 @@ function reportWindowSize(){
 
 // Function in loop to handle any page modifications
 function draw() {
-    if (millis() > prevtime + 2) {
-        //goWiki() // update the github repository
-    }
-
-   
+    
 }
 
 
@@ -186,9 +178,7 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
-            
             this.temp = eval("new " + func + "(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)")
-            this.temp.button.style('font-size',this.apple)
             this.list.push(this.temp)
             this.list[i].button.mousePressed(this.list[i].callback)
         }
