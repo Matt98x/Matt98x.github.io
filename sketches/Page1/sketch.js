@@ -1,4 +1,4 @@
-var words = [{"html_url":"reule"}] // Github repositories object
+var words = [{"name":"","html_url":"reule"}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
