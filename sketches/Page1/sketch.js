@@ -1,6 +1,7 @@
 var words = [{"html_url":"null"}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
+var left_menu // left menu
 var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
