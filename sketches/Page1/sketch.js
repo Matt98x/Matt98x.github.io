@@ -54,6 +54,7 @@ function got_data(data) {
 
 // Main script of the page
 function mainscript(ww, wh) {
+    console.log("Hi")
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_repo"
