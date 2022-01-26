@@ -58,9 +58,9 @@ function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_nav"
-            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height * wh / firstHeight, 5, 1, "horizontal", 0, stringComm)
+            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
-            repositories = new block_menu(words, 0, nav_height * wh / firstHeight, 200 * ww / firstWidth, wh, 5, 1, "vertical", 0, stringComm)
+            repositories = new block_menu(words, 0, nav_height , 200 , 5, 1, "vertical", 0, stringComm)
             break
         }
     }
