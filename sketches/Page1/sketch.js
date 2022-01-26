@@ -219,7 +219,7 @@ function callback_nav() {
 }
 
 function callback_repo_list() {
-    console.log(this.field)
+    console.log(this)
     // if (repositories) {
     //     for (var i = 0; i < repositories.list.length; i++) {
 
