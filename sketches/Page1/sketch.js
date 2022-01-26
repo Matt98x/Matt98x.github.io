@@ -57,7 +57,7 @@ function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
             stringComm = "Button_to_repo"
-            left_menu = new left_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,stringComm) 
+            left_menu = new block_menu(wcopy,ww-repowidth,nav_height,repowidth,wh-nav_height,5,1,"vertical",0,stringComm) 
             stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height , 5, 1, "horizontal", 0, stringComm)
             stringComm = "Button_to_repo"
