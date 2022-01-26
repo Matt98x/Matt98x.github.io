@@ -181,8 +181,15 @@ class block_menu {
             }
             this.temp = new Button_of_menu(Jsonclass[i].name,Jsonclass[i].html_url,ULCx+this.spaceL,ULCy+this.spaceU,this.bwidth,this.bheight)
             this.list.push(this.temp)
-            this.list[i].button.mousePressed(func)
+            this.func = func
+            this.field = 3
+            this.list[i].button.mousePressed(this.callback)
+            
         }
+    }
+
+    callback(){
+        this.func()
     }
 
 }
@@ -200,7 +207,6 @@ class Button_of_menu {
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
-        this.field = 3
     } 
 }
 
