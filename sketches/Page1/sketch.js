@@ -56,7 +56,7 @@ function got_data(data) {
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
-        words[i].callback = page_refer
+        words[i].callback = callback_repo_list
         words[i].parameters = words[i].html_url
     }
 }

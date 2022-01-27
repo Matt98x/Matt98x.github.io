@@ -80,8 +80,6 @@ class block_menu {
             }
             this.temp = new Button_of_menu(Jsonclass[i], ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight)
             this.list.push(this.temp)
-            this.func = func
-            this.field = 3
 
         }
     }
