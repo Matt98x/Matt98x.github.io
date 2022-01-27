@@ -103,7 +103,7 @@ class Button_of_menu {
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
         this.button.func = obj.callback
-        this.button.field = obj.parameters
+        this.button.parameters = obj.parameters
     }
     callback() {
         this.func()
