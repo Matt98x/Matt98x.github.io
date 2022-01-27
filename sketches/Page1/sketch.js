@@ -56,7 +56,7 @@ function got_data(data) {
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
-        words[i].callback = callback_repo_list
+        words[i].callback = page_refer
         words[i].parameters = words[i].html_url
     }
 }
@@ -105,14 +105,3 @@ function draw() {
 
 }
 
-function callback_repo_list() {
-    console.log(this.field)
-    // if (repositories) {
-    //     for (var i = 0; i < repositories.list.length; i++) {
-
-    //         if (repositories.list[i].x == this.x && repositories.list[i].y == this.y) {
-    //             window.open(repositories.list[i].html_url, '_self')
-    //         }
-    //     }
-    // }
-}
