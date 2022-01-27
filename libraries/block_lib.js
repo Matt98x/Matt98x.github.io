@@ -3,6 +3,8 @@ class block_menu {
     constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind) {
         this.len = Object.keys(Jsonclass).length
         this.list = []
+        this.width = width
+        this.height = height
         this.graphics = createGraphics(width, height)
         this.graphics.background(51)
         image(this.graphics, ULCx, ULCy)
@@ -75,14 +77,14 @@ class block_menu {
                 this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
-                    this.cumulative0 += interspace + this.width
+                    this.cumulative0 += interspace + this.bwidth
                 } else if (Jsonclass[i].side == 1) {
-                    this.cumulative1 += interspace + this.width
+                    this.cumulative1 += interspace + this.bwidth
                     this.spaceL = width - border - this.cumulative1
                     console.log(this.spaceL)
                 } else {
                     this.spaceL = border + this.cumulative0
-                    this.cumulative0 += interspace + this.width
+                    this.cumulative0 += interspace + this.bwidth
                 }
                 this.multiplier = (width - 2 * border) / this.encumbrance
             } else {
@@ -95,13 +97,13 @@ class block_menu {
                 this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
-                    this.cumulative0 += interspace + this.width
+                    this.cumulative0 += interspace + this.bwidth
                 } else if (Jsonclass[i].side == 1) {
-                    this.cumulative1 += interspace + this.width
+                    this.cumulative1 += interspace + this.bwidth
                     this.spaceL = width - border - this.cumulative1
                 } else {
                     this.spaceL = border + this.cumulative0
-                    this.cumulative0 += interspace + this.width
+                    this.cumulative0 += interspace + this.bswidth
                 }
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
