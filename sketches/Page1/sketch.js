@@ -88,8 +88,6 @@ function setup() {
     prevWwidth = windowWidth
     mainscript(prevWwidth, prevWheight)
     window.addEventListener('resize', reportWindowSize)
-    temp = new callback_list()
-    temp.add_callback(callback_nav, 1, 3)
 }
 
 // Function to report if the window size has changed and update the sketch
