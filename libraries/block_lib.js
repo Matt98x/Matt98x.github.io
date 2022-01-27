@@ -53,10 +53,10 @@ class block_menu {
                 }
                 this.bwidth = width - 2 * border
                 this.spaceL = border
-                if (obj.side == 0) {
+                if (Jsonclass.side == 0) {
                     this.spaceU = border + this.cumulative0
                     this.cumulative0 += interspace + this.bheight
-                } else if (obj.side == 1) {
+                } else if (Jsonclass.side == 1) {
                     this.spaceU = height - border - this.cumulative1
                     this.cumulative0 += interspace + this.bheight
                 } else {
@@ -73,10 +73,10 @@ class block_menu {
                 }
                 this.bheight = height - 2 * border
                 this.spaceU = border
-                if (obj.side == 0) {
+                if (Jsonclass.side == 0) {
                     this.spaceL = border + this.cumulative0
                     this.cumulative0 += interspace + this.width
-                } else if (obj.side == 1) {
+                } else if (Jsonclass.side == 1) {
                     this.spaceL = width - border - this.cumulative1
                     this.cumulative0 += interspace + this.width
                 } else {
@@ -92,10 +92,10 @@ class block_menu {
                 }
                 this.bheight = height - 2 * border
                 this.spaceU = border
-                if (obj.side == 0) {
+                if (Jsonclass.side == 0) {
                     this.spaceL = border + this.cumulative0
                     this.cumulative0 += interspace + this.width
-                } else if (obj.side == 1) {
+                } else if (Jsonclass.side == 1) {
                     this.spaceL = width - border - this.cumulative1
                     this.cumulative0 += interspace + this.width
                 } else {
