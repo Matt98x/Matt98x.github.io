@@ -94,8 +94,7 @@ class block_menu {
 // Function to create a button in the menu
 class Button_of_menu {
     constructor(obj, x, y, width, height, cl) {
-        this.name = name
-        this.html_url = link
+        this.name = obj.name
         this.x = x
         this.y = y
         this.width = width
