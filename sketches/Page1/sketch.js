@@ -1,4 +1,4 @@
-var words = [{ "name": "", "html_url": "reule" }] // Github repositories object
+var words = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[]}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
@@ -12,13 +12,18 @@ var reloadCount
 var expasionCoeff = 1
 var wcopy = words
 
+
 var nav_json = [{
     "name": "Home",
-    "html_url": "https://daedalus-furnace.herokuapp.com"
+    "html_url": "https://daedalus-furnace.herokuapp.com",
+    "callback": page_refer,
+    "parameters": this.html_url
 },
 {
     "name": "Github-main",
-    "html_url": "https://matt98x.github.io"
+    "html_url": "https://matt98x.github.io",
+    "callback": page_refer,
+    "parameters": this.html_url
 }
 ]
 
@@ -39,8 +44,6 @@ function preload() {
     prevwords = words
 }
 
-
-
 // Function to get the list of github repositories
 function goWiki() {
     path = 'https://api.github.com/users/Matt98x/repos'
@@ -49,16 +52,22 @@ function goWiki() {
 
 // Callback to store the list of repositories
 function got_data(data) {
+    header = data.header
     words = data.data
+    let len = Object.keys(Jsonclass).length
+    for (let i = 0; i < len; i++) {
+        words[i].callback = page_refer
+        words[i].parameters = words[i].html_url
+    }
 }
 
 // Main script of the page
 function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
-            left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0, callback_repo_list)
-            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0, callback_nav)
-            repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0, callback_repo_list)
+            left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0)
+            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0)
+            repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0)
             break
         }
     }
@@ -80,9 +89,10 @@ function setup() {
     mainscript(prevWwidth, prevWheight)
     window.addEventListener('resize', reportWindowSize)
     temp = new callback_list()
-    temp.add_callback(callback_nav,1,3)
+    temp.add_callback(callback_nav, 1, 3)
 }
 
+// Function to report if the window size has changed and update the sketch
 function reportWindowSize() {
     cleanup() // Function to clean up the page
     prevWheight = windowHeight // store the current value as the previous
@@ -92,27 +102,9 @@ function reportWindowSize() {
     mainscript(windowWidth, windowHeight) // reset the view
 }
 
-
 // Function in loop to handle any page modifications
 function draw() {
 
-}
-
-
-
-
-
-
-function callback_nav() {
-    //console.log(this.field)
-    if (nav_menu) {
-        for (var i = 0; i < nav_menu.list.length; i++) {
-
-            if (nav_menu.list[i].x == this.x && nav_menu.list[i].y == this.y) {
-                window.open(nav_menu.list[i].html_url, '_self')
-            }
-        }
-    }
 }
 
 function callback_repo_list() {

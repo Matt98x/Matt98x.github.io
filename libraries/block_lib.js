@@ -1,6 +1,6 @@
 // Class to display a button menu
 class block_menu {
-    constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind, func) {
+    constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind) {
         this.len = Object.keys(Jsonclass).length
         this.list = []
         this.graphics = createGraphics(width, height)
@@ -8,7 +8,8 @@ class block_menu {
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
-
+        
+        // Loop to get the encumbrance of the menu
         for (var j = initind; j < this.len; j++) {
             if (orientation == "vertical") {
                 this.encumbrance += 12 + 2 * border// this is the default
@@ -35,7 +36,9 @@ class block_menu {
             }
             this.limit = j + 1
         }
+
         this.cumulative = 0
+
         for (var i = initind; i < this.limit; i++) {
 
             this.twidth = textWidth(Jsonclass[i].name) + 3 * border
@@ -75,7 +78,7 @@ class block_menu {
                 this.cumulative += interspace + this.bwidth
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
-            this.temp = new Button_of_menu(Jsonclass[i].name, Jsonclass[i].html_url, ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight, func)
+            this.temp = new Button_of_menu(Jsonclass[i], ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight)
             this.list.push(this.temp)
             this.func = func
             this.field = 3
@@ -90,7 +93,7 @@ class block_menu {
 
 // Function to create a button in the menu
 class Button_of_menu {
-    constructor(name, link, x, y, width, height, func) {
+    constructor(obj, x, y, width, height, cl) {
         this.name = name
         this.html_url = link
         this.x = x
@@ -102,8 +105,8 @@ class Button_of_menu {
         this.button.position(x, y)
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
-        this.button.func = func
-        this.button.field = 3
+        this.button.func = obj.callback
+        this.button.field = obj.parameters
     }
     callback() {
         this.func()
@@ -120,10 +123,16 @@ class callback_list{
     add_callback(callback,index,parameters){
         temp={
             "callback":callback,
-            "index": index,
             "parameters": parameters
         }
         this.callback_list.push(temp)
 
+    }
+}
+
+// function to redirect to another page
+function page_refer() {
+    if (this.parameters) {
+        window.open(this.parameters, '_self')
     }
 }
