@@ -56,11 +56,8 @@ function got_data(data) {
 function mainscript(ww, wh) {
     while (true) {
         if (nav_json && words) {
-            stringComm = "Button_to_repo"
             left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0, callback_repo_list)
-            stringComm = "Button_to_nav"
             nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0, callback_nav)
-            stringComm = "Button_to_repo"
             repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0, callback_repo_list)
             break
         }
@@ -82,6 +79,8 @@ function setup() {
     prevWwidth = windowWidth
     mainscript(prevWwidth, prevWheight)
     window.addEventListener('resize', reportWindowSize)
+    temp = new callback_list()
+    temp.add_callback(callback_nav,1,3)
 }
 
 function reportWindowSize() {
@@ -101,30 +100,6 @@ function draw() {
 
 
 
-
-
-
-// Function to create a button in the menu
-class Button_of_menu {
-    constructor(name, link, x, y, width, height, func) {
-        this.name = name
-        this.html_url = link
-        this.x = x
-        this.y = y
-        this.width = width
-        this.height = height
-
-        this.button = createButton(this.name)
-        this.button.position(x, y)
-        this.button.size(width, height)
-        this.button.mousePressed(this.callback)
-        this.button.func = func
-        this.button.field = 3
-    }
-    callback() {
-        this.func()
-    }
-}
 
 
 

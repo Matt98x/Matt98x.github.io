@@ -86,3 +86,44 @@ class block_menu {
 
 
 }
+
+
+// Function to create a button in the menu
+class Button_of_menu {
+    constructor(name, link, x, y, width, height, func) {
+        this.name = name
+        this.html_url = link
+        this.x = x
+        this.y = y
+        this.width = width
+        this.height = height
+
+        this.button = createButton(this.name)
+        this.button.position(x, y)
+        this.button.size(width, height)
+        this.button.mousePressed(this.callback)
+        this.button.func = func
+        this.button.field = 3
+    }
+    callback() {
+        this.func()
+    }
+}
+
+
+
+// Class to handle the callback
+class callback_list{
+    constructor(){
+        this.callback_list=[]
+    }
+    add_callback(callback,index,parameters){
+        temp={
+            "callback":callback,
+            "index": index,
+            "parameters": parameters
+        }
+        this.callback_list.append(temp)
+
+    }
+}
