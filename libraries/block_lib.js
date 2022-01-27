@@ -123,7 +123,7 @@ class callback_list{
             "index": index,
             "parameters": parameters
         }
-        this.callback_list.append(temp)
+        this.callback_list.push(temp)
 
     }
 }
