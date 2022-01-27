@@ -54,7 +54,7 @@ function goWiki() {
 function got_data(data) {
     header = data.header
     words = data.data
-    let len = Object.keys(Jsonclass).length
+    let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
