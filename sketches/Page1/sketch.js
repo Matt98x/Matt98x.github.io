@@ -17,13 +17,13 @@ var nav_json = [{
     "name": "Home",
     "html_url": "https://daedalus-furnace.herokuapp.com",
     "callback": page_refer,
-    "parameters": this.html_url
+    "parameters": "https://daedalus-furnace.herokuapp.com"
 },
 {
     "name": "Github-main",
     "html_url": "https://matt98x.github.io",
     "callback": page_refer,
-    "parameters": this.html_url
+    "parameters": "https://matt98x.github.io"
 }
 ]
 
