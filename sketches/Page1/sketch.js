@@ -17,13 +17,15 @@ var nav_json = [{
     "name": "Home",
     "html_url": "https://daedalus-furnace.herokuapp.com",
     "callback": page_refer,
-    "parameters": "https://daedalus-furnace.herokuapp.com"
+    "parameters": "https://daedalus-furnace.herokuapp.com",
+    "side": 0
 },
 {
     "name": "Github-main",
     "html_url": "https://matt98x.github.io",
     "callback": page_refer,
-    "parameters": "https://matt98x.github.io"
+    "parameters": "https://matt98x.github.io",
+    "side": 1
 }
 ]
 
@@ -58,6 +60,7 @@ function got_data(data) {
     for (let i = 0; i < len; i++) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
+        words[i].side=0
     }
 }
 

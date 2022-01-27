@@ -8,7 +8,7 @@ class block_menu {
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
-        
+
         // Loop to get the encumbrance of the menu
         for (var j = initind; j < this.len; j++) {
             if (orientation == "vertical") {
@@ -37,7 +37,8 @@ class block_menu {
             this.limit = j + 1
         }
 
-        this.cumulative = 0
+        this.cumulative0 = 0
+        this.cumulative1 = 0
 
         for (var i = initind; i < this.limit; i++) {
 
@@ -52,8 +53,17 @@ class block_menu {
                 }
                 this.bwidth = width - 2 * border
                 this.spaceL = border
-                this.spaceU = border + this.cumulative
-                this.cumulative += interspace + this.bheight
+                if (obj.side == 0) {
+                    this.spaceU = border + this.cumulative0
+                    this.cumulative0 += interspace + this.bheight
+                } else if (obj.side == 1) {
+                    this.spaceU = height - border - this.cumulative1
+                    this.cumulative0 += interspace + this.bheight
+                } else {
+                    this.spaceU = border + this.cumulative0
+                    this.cumulative0 += interspace + this.bheight
+                }
+
                 this.multiplier = (height - 2 * border) / this.encumbrance
             } else if (orientation == "horizontal") {
                 if (this.limit == this.len) {
@@ -62,9 +72,17 @@ class block_menu {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
                 this.bheight = height - 2 * border
-                this.spaceL = border + this.cumulative
                 this.spaceU = border
-                this.cumulative += interspace + this.bwidth
+                if (obj.side == 0) {
+                    this.spaceL = border + this.cumulative0
+                    this.cumulative0 += interspace + this.width
+                } else if (obj.side == 1) {
+                    this.spaceL = width - border - this.cumulative1
+                    this.cumulative0 += interspace + this.width
+                } else {
+                    this.spaceL = border + this.cumulative0
+                    this.cumulative0 += interspace + this.width
+                }
                 this.multiplier = (width - 2 * border) / this.encumbrance
             } else {
                 if (this.limit == this.len) {
@@ -73,9 +91,17 @@ class block_menu {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
                 this.bheight = height - 2 * border
-                this.spaceL = border + this.cumulative
                 this.spaceU = border
-                this.cumulative += interspace + this.bwidth
+                if (obj.side == 0) {
+                    this.spaceL = border + this.cumulative0
+                    this.cumulative0 += interspace + this.width
+                } else if (obj.side == 1) {
+                    this.spaceL = width - border - this.cumulative1
+                    this.cumulative0 += interspace + this.width
+                } else {
+                    this.spaceL = border + this.cumulative0
+                    this.cumulative0 += interspace + this.width
+                }
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             this.temp = new Button_of_menu(Jsonclass[i], ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight)
@@ -113,13 +139,13 @@ class Button_of_menu {
 
 
 // Class to handle the callback
-class callback_list{
-    constructor(){
-        this.callback_list=[]
+class callback_list {
+    constructor() {
+        this.callback_list = []
     }
-    add_callback(callback,index,parameters){
-        temp={
-            "callback":callback,
+    add_callback(callback, index, parameters) {
+        temp = {
+            "callback": callback,
             "parameters": parameters
         }
         this.callback_list.push(temp)
