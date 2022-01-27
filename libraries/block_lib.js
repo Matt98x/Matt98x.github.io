@@ -129,7 +129,5 @@ class callback_list{
 
 // function to redirect to another page
 function page_refer() {
-    if (this.parameters) {
-        window.open(this.parameters, '_self')
-    }
+    window.open(this.parameters, '_self')
 }
