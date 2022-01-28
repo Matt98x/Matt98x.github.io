@@ -13,7 +13,10 @@ var repowidth = 200 // width of the repository list
 var prevtime
 var reloadCount
 var expasionCoeff = 1
-var wcopy = words
+var wcopy = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[],"side": 0,
+"border-radius": "0px",
+"col_back": color(0,0,0),
+"col_text": color(255,255,255)}] // Github repositories object
 
 
 var nav_json = [{
