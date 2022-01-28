@@ -81,7 +81,6 @@ class block_menu {
                 } else if (Jsonclass[i].side == 1) {
                     this.cumulative1 += interspace + this.bwidth
                     this.spaceL = width - border - this.cumulative1
-                    console.log(this.spaceL)
                 } else {
                     this.spaceL = border + this.cumulative0
                     this.cumulative0 += interspace + this.bwidth
