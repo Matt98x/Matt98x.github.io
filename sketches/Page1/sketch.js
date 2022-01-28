@@ -1,7 +1,7 @@
 var words = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[],"side": 0,
 "border-radius": "0px",
-"col_back": color(0,0,0),
-"col_text": color(255,255,255)}] // Github repositories object
+"col_back": '#000000',
+"col_text": '#ffffff'}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
@@ -13,10 +13,7 @@ var repowidth = 200 // width of the repository list
 var prevtime
 var reloadCount
 var expasionCoeff = 1
-var wcopy = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[],"side": 0,
-"border-radius": "0px",
-"col_back": color(0,0,0),
-"col_text": color(255,255,255)}] // Github repositories object
+var wcopy = words
 
 
 var nav_json = [{
@@ -26,8 +23,8 @@ var nav_json = [{
     "parameters": "https://daedalus-furnace.herokuapp.com",
     "side": 0,
     "border-radius": "0px",
-    "col_back": color(0,0,0),
-    "col_text": color(255,255,255)
+    "col_back": '#000000',
+    "col_text": '#ffffff'
 },
 {
     "name": "Github-main",
@@ -36,8 +33,8 @@ var nav_json = [{
     "parameters": "https://matt98x.github.io",
     "side": 1,
     "border_radius": "0px",
-    "col_back": color(0,0,0),
-    "col_text": color(255,255,255)
+    "col_back": '#000000',
+    "col_text": '#ffffff'
 }
 ]
 
@@ -74,8 +71,8 @@ function got_data(data) {
         words[i].parameters = words[i].html_url
         words[i].side=0
         words[i].border_radius = "0px"
-        words[i].col_back= color(0,0,0)
-        words[i].col_text= color(255,255,255)
+        words[i].col_back= '#000000'
+        words[i].col_text= '#ffffff'
     }
 }
 
