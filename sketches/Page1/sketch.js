@@ -1,4 +1,7 @@
-var words = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[]}] // Github repositories object
+var words = [{ "name": "temp", "html_url": "reule","callback":function(){},"parameters":[],"side": 0,
+"border-radius": "0px",
+"col_back": color(0,0,0),
+"col_text": color(255,255,255)}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
