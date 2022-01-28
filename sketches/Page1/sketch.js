@@ -7,8 +7,9 @@ var border = "0px"
 
 var words = [{ "name": "", "html_url": "","callback":function(){},"parameters":[],"side": 0,
 "border-radius": border_rad,
-"col_back": '#404040',
-"col_text": '#ffffff'}] // Github repositories object
+"col_back": back_col,
+"col_text": text_col,
+"border": border}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
 var left_menu // left menu
@@ -31,7 +32,8 @@ var nav_json = [{
     "side": 0,
     "border-radius": border_rad,
     "col_back": back_col,
-    "col_text": text_col
+    "col_text": text_col,
+    "border":border
 },
 {
     "name": "Github-main",
@@ -41,7 +43,8 @@ var nav_json = [{
     "side": 0,
     "border_radius": border_rad,
     "col_back": back_col,
-    "col_text": text_col
+    "col_text": text_col,
+    "border":border
 }
 ]
 
@@ -80,6 +83,7 @@ function got_data(data) {
         words[i].border_radius = border_rad
         words[i].col_back= back_col
         words[i].col_text= text_col
+        words[i].border = border
     }
 }
 

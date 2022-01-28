@@ -110,6 +110,7 @@ class block_menu {
             this.temp.button.style('background-color',Jsonclass[i].col_back)
             this.temp.button.style('color',Jsonclass[i].col_text)
             this.temp.button.style('border-radius',Jsonclass[i].border_radius)
+            this.temp.button.style('border',Jsonclass[i].border)
             this.list.push(this.temp)
 
         }
