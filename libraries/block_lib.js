@@ -108,6 +108,9 @@ class block_menu {
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             this.temp = new Button_of_menu(Jsonclass[i], ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight)
+            this.temp.style('background-color',Jsonclass[i].col_back)
+            this.temp.style('color',Jsonclass[i].col_text)
+            this.temp.style('border-radius',Jsonclass[i].border_radius)
             this.list.push(this.temp)
 
         }

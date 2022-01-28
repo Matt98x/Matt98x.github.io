@@ -18,14 +18,20 @@ var nav_json = [{
     "html_url": "https://daedalus-furnace.herokuapp.com",
     "callback": page_refer,
     "parameters": "https://daedalus-furnace.herokuapp.com",
-    "side": 0
+    "side": 0,
+    "border-radius": "0px",
+    "col_back": color(0,0,0),
+    "col_text": color(255,255,255)
 },
 {
     "name": "Github-main",
     "html_url": "https://matt98x.github.io",
     "callback": page_refer,
     "parameters": "https://matt98x.github.io",
-    "side": 1
+    "side": 1,
+    "border_radius": "0px",
+    "col_back": color(0,0,0),
+    "col_text": color(255,255,255)
 }
 ]
 
@@ -61,6 +67,9 @@ function got_data(data) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
         words[i].side=0
+        words[i].border_radius = "0px"
+        words[i].col_back= color(0,0,0)
+        words[i].col_text= color(255,255,255)
     }
 }
 
