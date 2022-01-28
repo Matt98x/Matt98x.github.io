@@ -1,5 +1,12 @@
+var border_rad = "0px"
+var back_col = "#404040"
+var text_col = "#ffffff"
+var border = "0px"
+
+
+
 var words = [{ "name": "", "html_url": "","callback":function(){},"parameters":[],"side": 0,
-"border-radius": "0px",
+"border-radius": border_rad,
 "col_back": '#404040',
 "col_text": '#ffffff'}] // Github repositories object
 var repositories // repositories menu object
@@ -22,9 +29,9 @@ var nav_json = [{
     "callback": page_refer,
     "parameters": "https://daedalus-furnace.herokuapp.com",
     "side": 0,
-    "border-radius": "0px",
-    "col_back": '#404040',
-    "col_text": '#ffffff'
+    "border-radius": border_rad,
+    "col_back": back_col,
+    "col_text": text_col
 },
 {
     "name": "Github-main",
@@ -32,9 +39,9 @@ var nav_json = [{
     "callback": page_refer,
     "parameters": "https://matt98x.github.io",
     "side": 0,
-    "border_radius": "0px",
-    "col_back": '#404040',
-    "col_text": '#ffffff'
+    "border_radius": border_rad,
+    "col_back": back_col,
+    "col_text": text_col
 }
 ]
 
@@ -70,9 +77,9 @@ function got_data(data) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
         words[i].side=0
-        words[i].border_radius = "0px"
-        words[i].col_back= '#404040'
-        words[i].col_text= '#ffffff'
+        words[i].border_radius = border_rad
+        words[i].col_back= back_col
+        words[i].col_text= text_col
     }
 }
 
