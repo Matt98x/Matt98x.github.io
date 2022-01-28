@@ -75,14 +75,12 @@ function got_data(data) {
 
 // Main script of the page
 function mainscript(ww, wh) {
-    while (true) {
-        if (nav_json && words) {
+        
             left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0)
             nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0)
             repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0)
-            break
-        }
-    }
+        
+    
 }
 
 // Function to delete every html elements
