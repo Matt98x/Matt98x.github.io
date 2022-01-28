@@ -1,6 +1,6 @@
 var words = [{ "name": "", "html_url": "","callback":function(){},"parameters":[],"side": 0,
 "border-radius": "0px",
-"col_back": '#000000',
+"col_back": '#404040',
 "col_text": '#ffffff'}] // Github repositories object
 var repositories // repositories menu object
 var nav_menu // navigation menu object
@@ -23,7 +23,7 @@ var nav_json = [{
     "parameters": "https://daedalus-furnace.herokuapp.com",
     "side": 0,
     "border-radius": "0px",
-    "col_back": '#101010',
+    "col_back": '#404040',
     "col_text": '#ffffff'
 },
 {
@@ -31,9 +31,9 @@ var nav_json = [{
     "html_url": "https://matt98x.github.io",
     "callback": page_refer,
     "parameters": "https://matt98x.github.io",
-    "side": 1,
+    "side": 0,
     "border_radius": "0px",
-    "col_back": '#101010',
+    "col_back": '#404040',
     "col_text": '#ffffff'
 }
 ]
@@ -71,7 +71,7 @@ function got_data(data) {
         words[i].parameters = words[i].html_url
         words[i].side=0
         words[i].border_radius = "0px"
-        words[i].col_back= '#101010'
+        words[i].col_back= '#404040'
         words[i].col_text= '#ffffff'
     }
 }
