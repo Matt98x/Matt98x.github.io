@@ -1,5 +1,5 @@
 var border_rad = "0px"
-var back_col = "#404040"
+var back_col = "#000000"
 var text_col = "#ffffff"
 var border = "0px"
 
