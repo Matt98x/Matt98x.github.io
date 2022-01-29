@@ -54,11 +54,11 @@ function preload() {
 }
 
 // Function to get the list of github repositories
-function goWiki(data) {
-    console.log(data)
+function goWiki(data1) {
+    console.log(data1)
     
 
-    if (data["remaining"] > 0 || current_time > data["last_reset"]) {
+    if (data1.remaining > 0 || current_time > data1.remaining) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
