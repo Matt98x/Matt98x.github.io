@@ -34,7 +34,7 @@ var datacache
 function preload() {
 
     path = "test.json"
-    datacache = loadJSON("https://api.github.com/rate_limit",got_data1)
+    loadJSON("https://api.github.com/rate_limit",got_data1,'jsonp')
 }
 
 
@@ -42,7 +42,7 @@ function preload() {
 function got_data1(data) {
     current_time = new Date()
     current_time = current_time.getTime() / 1000
-    console.log(current_time)
+    console.log(data)
     if (data.remaining > 0 || current_time > data.last_reset) {
         console.log(current_time - data.last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
