@@ -41,7 +41,7 @@ function preload() {
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     
-    goWiki(datacache)
+    goWiki(datacache[0])
 
 
 
