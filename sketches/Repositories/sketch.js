@@ -46,7 +46,7 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     path = "test.json"
-    data = loadJSON("test.json")
+    let data = loadJSON("test.json")
     console.log(data)
     last_reset = data.last_reset
     remaining = data.remaining
