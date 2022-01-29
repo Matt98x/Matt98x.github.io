@@ -21,12 +21,9 @@ var prevtime
 var reloadCount // how many times the page has been reloaded
 var last_reset // the last polling reset obtained
 var remaining // how many pollings I have left
-var expasionCoeff = 1
 var wcopy = words
 var n_menu
-var header
 var current_time
-var datacache
 
 
 

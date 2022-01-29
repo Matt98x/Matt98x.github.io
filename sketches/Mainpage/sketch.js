@@ -35,7 +35,10 @@ function reportWindowSize() {
    
   }
 
-
+// Function to delete every html elements
+function cleanup() {
+  removeElements() // remove all html elements
+}
 
 
   // //Creo una nuova campagna
