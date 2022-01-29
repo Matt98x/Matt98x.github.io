@@ -11,7 +11,6 @@ class MD_handler {
         this.root.elt.style.width = w + "px"
         this.root.elt.style.height = h + "px"
         this.root.elt.style.overflow = "scroll"
-        this.root.elt.style.overflowX = "scroll"
         document.getElementsByTagName("body")[0].appendChild(this.root.elt)
     }
 }
