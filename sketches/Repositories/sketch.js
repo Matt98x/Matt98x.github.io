@@ -42,7 +42,7 @@ function preload() {
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     
-    goWiki(datacache["0"])
+    goWiki()
 
 
 
@@ -56,7 +56,7 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     
-
+    console.log(datacache)
     if (datacache["0"].remaining > 0 || current_time > datacache["0"].remaining) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
