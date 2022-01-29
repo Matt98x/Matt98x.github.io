@@ -31,7 +31,7 @@ var current_time
 function preload() {
 
     loadJSON("https://api.github.com/rate_limit",got_data1)
-    loadString("./README.md",gottext)
+    loadStrings("./README.md",gottext)
 }
 
 function gottext(text){
