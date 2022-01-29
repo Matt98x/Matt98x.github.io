@@ -44,8 +44,8 @@ function preload() {
     console.log(data["remaining"])
     console.log(data.remaining)
     console.log(data["remaining"] > 0)
-    
-    goWiki()
+
+    goWiki(data)
 
 
 
