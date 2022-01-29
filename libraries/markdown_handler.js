@@ -8,6 +8,6 @@ class MD_handler {
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = oL + "px"
         this.root.elt.style.top = oU + "px"
-        document.getElementsByTagName("body")[0].appendChild(this.root)
+        document.getElementsByTagName("body")[0].append(this.root)
     }
 }
