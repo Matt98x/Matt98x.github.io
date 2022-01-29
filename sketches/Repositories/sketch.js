@@ -36,12 +36,13 @@ function preload() {
 
     path = "test.json"
     datacache = loadJSON("test.json")
+    console.log(datacache)
     last_reset = datacache.last_reset
     remaining = datacache.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     
-    goWiki(datacache[0])
+    goWiki(datacache["0"])
 
 
 
