@@ -26,7 +26,7 @@ var wcopy = words
 var n_menu
 var header
 var current_time
-var data
+var datacache
 
 
 
@@ -35,13 +35,13 @@ function preload() {
 
 
     path = "test.json"
-    data = loadJSON("test.json")
+    datacache = loadJSON("test.json")
     last_reset = data.last_reset
     remaining = data.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     
-    goWiki(data)
+    goWiki(datacache)
 
 
 
