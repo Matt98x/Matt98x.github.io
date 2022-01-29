@@ -26,6 +26,7 @@ var wcopy = words
 var n_menu
 var header
 var current_time
+var data
 
 
 
@@ -34,7 +35,7 @@ function preload() {
 
 
     path = "test.json"
-    let data = loadJSON("test.json")
+    data = loadJSON("test.json")
     last_reset = data.last_reset
     remaining = data.remaining
     current_time = new Date()
