@@ -57,7 +57,7 @@ function preload() {
 function goWiki() {
     
     console.log(datacache)
-    if (datacache["0"].remaining > 0 || current_time > datacache["0"].remaining) {
+    if (datacache.remaining > 0 || current_time > datacache.remaining) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
