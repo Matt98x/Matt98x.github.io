@@ -45,7 +45,7 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     path = "test.json"
-    loadJSON(path, check_polling)
+    loadJSON(test.json, check_polling)
     var current_time = new Date
     current_time = current_time.getTime() / 1000
     if (remaining > 0 || current_time > last_reset) {
@@ -55,6 +55,7 @@ function goWiki() {
 }
 
 function check_polling(data) {
+    console.log(data)
     last_reset = data.last_reset
     remaining = data.remaining
 
