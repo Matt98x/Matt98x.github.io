@@ -2,6 +2,7 @@ class MD_handler {
     constructor(link, oL, oU, w, h) {
         this.root = createElement("div")
         let mark = createElement("zero-md")
+        console.log(mark)
         mark.attr("src", link)
         this.root.appendChild(mark)
         this.root.style.position = "absolute"
