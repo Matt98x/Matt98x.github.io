@@ -57,7 +57,7 @@ function preload() {
 }
 
 // Function to get the list of github repositories
-function goWiki() {
+function goWiki(data) {
    
     if (data["remaining"] > 0 || current_time > data["last_reset"]) {
         console.log(current_time - last_reset)
