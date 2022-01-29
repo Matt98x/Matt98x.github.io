@@ -27,6 +27,17 @@ class Navigation_m{
             "col_text": this.text_col,
             "border":this.border
         }
+        {
+            "name": "Repositories",
+            "html_url": "https://matt98x.github.io/Repositories",
+            "callback": page_refer,
+            "parameters": "https://matt98x.github.io/Repositories",
+            "side": 0,
+            "border_radius": this.border_rad,
+            "col_back": this.back_col,
+            "col_text": this.text_col,
+            "border":this.border
+        }
         ]
         this.nav_menu = new block_menu(this.nav_json, 0, 0, wwidth, this.nav_height, 5, 1, "horizontal", 0)
     }
