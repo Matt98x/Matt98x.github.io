@@ -52,6 +52,7 @@ function goWiki() {
     remaining = data.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
+    console.log(data.remaining > 0 || current_time > data.last_reset)
     if (data.remaining > 0 || current_time > data.last_reset) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
