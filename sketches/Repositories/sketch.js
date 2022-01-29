@@ -35,7 +35,7 @@ function preload() {
 
     path = "test.json"
     let data = loadJSON("test.json")
-    console.log(data)
+    console.log(Object.keys(data))
     last_reset = data.last_reset
     remaining = data.remaining
     current_time = new Date()
