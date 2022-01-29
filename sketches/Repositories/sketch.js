@@ -36,8 +36,8 @@ function preload() {
 
     path = "test.json"
     datacache = loadJSON("test.json")
-    last_reset = data.last_reset
-    remaining = data.remaining
+    last_reset = datacache.last_reset
+    remaining = datacache.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     
