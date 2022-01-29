@@ -25,6 +25,7 @@ var expasionCoeff = 1
 var wcopy = words
 var n_menu
 var header
+var current_time
 
 
 
@@ -46,9 +47,10 @@ function preload() {
 function goWiki() {
     path = "test.json"
     loadJSON("test.json", check_polling)
-    var current_time = new Date
+    current_time = new Date()
     current_time = current_time.getTime() / 1000
     if (remaining > 0 || current_time > last_reset) {
+        console.log(current_time-last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
     }
