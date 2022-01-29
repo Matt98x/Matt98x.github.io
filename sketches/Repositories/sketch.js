@@ -20,12 +20,13 @@ var reloadCount
 var expasionCoeff = 1
 var wcopy = words
 var n_menu
-
+var header
 
 
 
 // Preload function to get any stored data
 function preload() {
+    goWiki()
     var state = history.state || {}
     reloadCount = state.reloadCount || 0
     if (performance.navigation.type == 1) {
@@ -36,8 +37,6 @@ function preload() {
         reloadCount = 0
         history.replaceState(state, null, document.URL)
     }
-
-    goWiki()
     prevwords = words
 }
 
