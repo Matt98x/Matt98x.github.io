@@ -49,7 +49,7 @@ function goWiki() {
 // Callback to store the list of repositories
 function got_data(data) {
     header = data.header
-    console.log(header)
+    console.log(data)
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
