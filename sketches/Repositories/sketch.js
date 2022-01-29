@@ -31,7 +31,7 @@ var current_time
 function preload() {
 
     loadJSON("https://api.github.com/rate_limit",got_data1)
-    loadStrings("./README.md",gottext)
+    loadStrings("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",gottext)
 }
 
 function gottext(text){
