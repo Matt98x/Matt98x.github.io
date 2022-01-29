@@ -31,8 +31,12 @@ var current_time
 function preload() {
 
     loadJSON("https://api.github.com/rate_limit",got_data1)
+    loadString("./README.md",gottext)
 }
 
+function gottext(text){
+    console.log(text)
+}
 
 // Callback to store the list of repositories
 function got_data1(data) {
