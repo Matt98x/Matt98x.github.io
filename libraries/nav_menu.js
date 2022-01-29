@@ -26,7 +26,7 @@ class Navigation_m{
             "col_back": this.back_col,
             "col_text": this.text_col,
             "border":this.border
-        }
+        },
         {
             "name": "Repositories",
             "html_url": "https://matt98x.github.io/Repositories",
