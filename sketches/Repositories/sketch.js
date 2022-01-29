@@ -3,8 +3,6 @@ var back_col = "#000000"
 var text_col = "#ffffff"
 var border = "0px"
 
-
-
 var words = [{ "name": "", "html_url": "","callback":function(){},"parameters":[],"side": 0,
 "border-radius": border_rad,
 "col_back": back_col,
@@ -52,6 +50,7 @@ function goWiki() {
 // Callback to store the list of repositories
 function got_data(data) {
     header = data.header
+    console.log(header)
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
