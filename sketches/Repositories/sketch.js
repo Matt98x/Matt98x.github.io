@@ -46,7 +46,9 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     path = "test.json"
-    await loadJSON("test.json", check_polling)
+    data= loadJSON("test.json")
+    last_reset = data.last_reset
+    remaining = data.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     console.log(last_reset)
@@ -58,12 +60,7 @@ function goWiki() {
     }
 }
 
-function check_polling(data) {
-    console.log(data)
-    last_reset = data.last_reset
-    remaining = data.remaining
-    return true
-}
+
 
 // Callback to store the list of repositories
 function got_data(data) {
