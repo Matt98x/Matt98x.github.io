@@ -2,8 +2,8 @@ class Navigation_m{
     constructor(wwidth,navigation_height){
         this.nav_height = navigation_height // height of the navigation menu
         this.border_rad = "0px"
-        this.back_col = "#000000"
-        this.text_col = "#ffffff"
+        this.back_col = "" //"#000000"
+        this.text_col = "" //"#ffffff"
         this.border = "0px"
         this.nav_json = [{
             "name": "Home",
