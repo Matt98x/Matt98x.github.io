@@ -56,7 +56,7 @@ function preload() {
 function goWiki(data) {
     console.log(Object.keys(data).length)
     console.log(data["remaining"])
-    console.log(data.remaining)
+    console.log(data)
     console.log(data["remaining"] > 0)
 
     if (data["remaining"] > 0 || current_time > data["last_reset"]) {
