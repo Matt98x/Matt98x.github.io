@@ -54,7 +54,7 @@ function preload() {
 
 // Function to get the list of github repositories
 function goWiki(data) {
-    console.log(Object.keys(data).length)
+    console.log(Object.values(data))
     console.log(data["remaining"])
     console.log(data)
     console.log(data["remaining"] > 0)
