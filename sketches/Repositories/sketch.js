@@ -34,7 +34,7 @@ var datacache
 function preload() {
 
     path = "test.json"
-    datacache = loadJSON("test.json",got_data1)
+    datacache = loadJSON("https://api.github.com/rate_limit",got_data1)
 }
 
 
