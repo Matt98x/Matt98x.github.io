@@ -46,7 +46,8 @@ function preload() {
 function goWiki() {
     path = "test.json"
     loadJSON(path, check_polling)
-    var current_time = new Date.getTime() / 1000
+    var current_time = new Date
+    current_time = current_time.getTime() / 1000
     if (remaining > 0 || current_time > last_reset) {
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
@@ -74,11 +75,11 @@ function got_data(data) {
         words[i].col_text = text_col
         words[i].border = border
     }
-    toTextMessage={
-        "remaining":header["X-RateLimit-Reset"],
-        "last_reset":header["X-RateLimit-Remaining"]
+    toTextMessage = {
+        "remaining": header["X-RateLimit-Reset"],
+        "last_reset": header["X-RateLimit-Remaining"]
     }
-    saveJson(toTextMessage,"test.json")
+    saveJson(toTextMessage, "test.json")
 }
 
 // Main script of the page
