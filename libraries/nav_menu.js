@@ -1,6 +1,7 @@
 class Navigation_m{
     constructor(wwidth,navigation_height){
         this.nav_height = navigation_height // height of the navigation menu
+        this.width = wwidth
         this.border_rad = "0px"
         this.back_col = "" //"#000000"
         this.text_col = "" //"#ffffff"
@@ -39,6 +40,7 @@ class Navigation_m{
             "border":this.border
         }
         ]
-        this.nav_menu = new block_menu(this.nav_json, 0, 0, wwidth, this.nav_height, 5, 1, "horizontal", 0)
+        this.nav_menu = new block_menu(this.nav_json, 0, 0, this.width, this.nav_height, 5, 1, "horizontal", 0)
     }
+    
 }

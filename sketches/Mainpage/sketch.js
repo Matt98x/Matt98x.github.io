@@ -6,12 +6,26 @@ var lol;
 
 function setup() { 
  canvas=createCanvas(windowWidth,windowHeight)
- n_menu = new Navigation_m(windowHeight,100)
+ mainscript()
+ window.addEventListener('resize', this.reportWindowSize)
 
 }
   
   
-  
+function mainscript(){
+  n_menu = new Navigation_m(windowWidth,100)
+
+}
+
+  // Function to report if the window size has changed and update the sketch
+function reportWindowSize() {
+  cleanup() // Function to clean up the page
+  prevWheight = windowHeight // store the current value as the previous
+  prevWwidth = windowWidth // store the current value as the previous
+  resizeCanvas(windowWidth, windowHeight)
+  background(255) // refresh the canvas
+  mainscript(windowWidth, windowHeight) // reset the view
+}
 
 
   function draw(){ 
