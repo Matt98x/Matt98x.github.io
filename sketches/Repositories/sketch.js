@@ -35,36 +35,20 @@ function preload() {
 
 
     path = "test.json"
-    datacache = loadJSON("test.json")
-    console.log(JSON.parse(datacache))
-    last_reset = datacache.last_reset
-    remaining = datacache.remaining
-    current_time = new Date()
-    current_time = current_time.getTime() / 1000
-    
-    goWiki()
-
-
-
-    var state = history.state || {}
-    reloadCount = state.reloadCount || 0
-
-
-    prevwords = words
+    datacache = loadJSON("test.json",got_data1)
 }
 
-// Function to get the list of github repositories
-function goWiki() {
-    
-    console.log(datacache)
-    if (datacache.remaining > 0 || current_time > datacache.remaining) {
+
+// Callback to store the list of repositories
+function got_data1(data) {
+    current_time = new Date()
+    current_time = current_time.getTime() / 1000
+    if (data.remaining > 0 || current_time > data.remaining) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
     }
 }
-
-
 
 // Callback to store the list of repositories
 function got_data(data) {
@@ -85,6 +69,7 @@ function got_data(data) {
         "remaining": header["X-RateLimit-Reset"],
         "last_reset": header["X-RateLimit-Remaining"]
     }
+    prevwords = words
     saveJson(toTextMessage, "test.json")
 }
 
