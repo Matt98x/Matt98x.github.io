@@ -40,11 +40,7 @@ function preload() {
     remaining = data.remaining
     current_time = new Date()
     current_time = current_time.getTime() / 1000
-    console.log(Object.keys(data).length)
-    console.log(data["remaining"])
-    console.log(data.remaining)
-    console.log(data["remaining"] > 0)
-
+    
     goWiki(data)
 
 
@@ -58,7 +54,11 @@ function preload() {
 
 // Function to get the list of github repositories
 function goWiki(data) {
-   
+    console.log(Object.keys(data).length)
+    console.log(data["remaining"])
+    console.log(data.remaining)
+    console.log(data["remaining"] > 0)
+
     if (data["remaining"] > 0 || current_time > data["last_reset"]) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
