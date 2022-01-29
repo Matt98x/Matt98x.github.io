@@ -68,7 +68,6 @@ function got_data(data) {
         "last_reset": header["X-RateLimit-Remaining"]
     }
     prevwords = words
-    saveJSON(toTextMessage, "test.json")
 }
 
 // Main script of the page
