@@ -14,7 +14,6 @@ function setup() {
   
 function mainscript(){
   n_menu = new Navigation_m(windowWidth,100)
-  elt = document.createElement("zero-md",{src:"./README.md"})
 }
 
   // Function to report if the window size has changed and update the sketch
