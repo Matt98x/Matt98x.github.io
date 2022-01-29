@@ -46,7 +46,7 @@ function preload() {
 // Function to get the list of github repositories
 function goWiki() {
     path = "test.json"
-    done = loadJSON("test.json", check_polling)
+    await loadJSON("test.json", check_polling)
     current_time = new Date()
     current_time = current_time.getTime() / 1000
     console.log(last_reset)
