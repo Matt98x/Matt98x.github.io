@@ -47,6 +47,7 @@ function preload() {
 function goWiki() {
     path = "test.json"
     data = loadJSON("test.json")
+    console.log("data")
     last_reset = data.last_reset
     remaining = data.remaining
     current_time = new Date()
