@@ -36,7 +36,7 @@ function preload() {
 
     path = "test.json"
     datacache = loadJSON("test.json")
-    console.log(datacache["0"])
+    console.log(Json.parse(datacache))
     last_reset = datacache.last_reset
     remaining = datacache.remaining
     current_time = new Date()
