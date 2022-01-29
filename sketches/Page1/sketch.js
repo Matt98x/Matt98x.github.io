@@ -16,37 +16,15 @@ var left_menu // left menu
 var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
-var nav_height = 100 // height of the navigation menu
 var repowidth = 200 // width of the repository list
 var prevtime
 var reloadCount
 var expasionCoeff = 1
 var wcopy = words
+var n_menu
 
 
-var nav_json = [{
-    "name": "Home",
-    "html_url": "https://daedalus-furnace.herokuapp.com",
-    "callback": page_refer,
-    "parameters": "https://daedalus-furnace.herokuapp.com",
-    "side": 0,
-    "border-radius": border_rad,
-    "col_back": back_col,
-    "col_text": text_col,
-    "border":border
-},
-{
-    "name": "Github-main",
-    "html_url": "https://matt98x.github.io",
-    "callback": page_refer,
-    "parameters": "https://matt98x.github.io",
-    "side": 0,
-    "border_radius": border_rad,
-    "col_back": back_col,
-    "col_text": text_col,
-    "border":border
-}
-]
+
 
 // Preload function to get any stored data
 function preload() {
@@ -89,10 +67,9 @@ function got_data(data) {
 
 // Main script of the page
 function mainscript(ww, wh) {
-        
-            left_menu = new block_menu(wcopy, ww - repowidth, nav_height, repowidth, wh - nav_height, 5, 1, "vertical", 0)
-            nav_menu = new block_menu(nav_json, 0, 0, ww, nav_height, 5, 1, "horizontal", 0)
-            repositories = new block_menu(words, 0, nav_height, repowidth, wh, 5, 1, "vertical", 0)
+            n_menu = new Navigation_m()
+            left_menu = new block_menu(wcopy, ww - repowidth, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
+            repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh, 5, 1, "vertical", 0)
         
     
 }
