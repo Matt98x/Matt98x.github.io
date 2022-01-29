@@ -35,7 +35,6 @@ function preload() {
 
     path = "test.json"
     let data = loadJSON("test.json")
-    console.log(data)
     last_reset = data.last_reset
     remaining = data.remaining
     current_time = new Date()
@@ -54,10 +53,8 @@ function preload() {
 
 // Function to get the list of github repositories
 function goWiki(data) {
-    console.log(Object.values(data))
-    console.log(data["remaining"])
     console.log(data)
-    console.log(data["remaining"] > 0)
+    
 
     if (data["remaining"] > 0 || current_time > data["last_reset"]) {
         console.log(current_time - last_reset)
