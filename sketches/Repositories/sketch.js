@@ -33,8 +33,7 @@ var datacache
 // Preload function to get any stored data
 function preload() {
 
-    path = "test.json"
-    loadJSON("https://api.github.com/rate_limit",got_data1,'jsonp')
+    loadJSON("https://api.github.com/rate_limit",got_data1)
 }
 
 
