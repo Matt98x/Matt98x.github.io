@@ -3,6 +3,14 @@ var back_col = "#000000"
 var text_col = "#ffffff"
 var border = "0px"
 
+var repo // variable to store the current repository
+
+
+var temp = "https://api.github.com/repos/Matt98x/Traversability_module/git/trees/main" // link to see all the elements in the repository Traversability module
+// code to remove just the div element
+// var k = document.getElementsByTagName("div")
+// k.parentNode.removeChild(k)
+
 var words = [{
     "name": "", "html_url": "", "callback": function () { }, "parameters": [], "side": 0,
     "border-radius": border_rad,
@@ -112,3 +120,7 @@ function draw() {
 
 }
 
+// Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
+function change_repo(){
+
+}
