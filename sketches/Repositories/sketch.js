@@ -33,7 +33,6 @@ var datacache
 // Preload function to get any stored data
 function preload() {
 
-
     path = "test.json"
     datacache = loadJSON("test.json",got_data1)
 }
@@ -43,6 +42,7 @@ function preload() {
 function got_data1(data) {
     current_time = new Date()
     current_time = current_time.getTime() / 1000
+    console.log(current_time)
     if (data.remaining > 0 || current_time > data.remaining) {
         console.log(current_time - last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
@@ -53,7 +53,6 @@ function got_data1(data) {
 // Callback to store the list of repositories
 function got_data(data) {
     header = data.meta
-    console.log(data)
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
