@@ -41,7 +41,7 @@ function preload() {
 function got_data1(data) {
     current_time = new Date()
     current_time = current_time.getTime() / 1000
-    console.log(data)
+    console.log(data.rate)
     if (data.remaining > 0 || current_time > data.last_reset) {
         console.log(current_time - data.last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
