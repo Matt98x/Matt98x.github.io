@@ -31,7 +31,7 @@ var current_time
 function preload() {
 
     loadJSON("https://api.github.com/rate_limit",got_data1)
-    loadStrings("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",gottext)
+    //loadStrings("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",gottext)
 }
 
 function gottext(text){
@@ -44,7 +44,6 @@ function got_data1(data) {
     current_time = current_time.getTime() / 1000
     console.log(data.rate)
     if (data.rate.remaining > 0) {
-        console.log(current_time - data.last_reset)
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
     }
@@ -76,6 +75,7 @@ function mainscript(ww, wh) {
     n_menu = new Navigation_m(ww, 100)
     left_menu = new block_menu(wcopy, ww - repowidth, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
     repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh, 5, 1, "vertical", 0)
+    console.log(ww-repowidth)
     new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,ww - repowidth,wh - n_menu.nav_height) 
     
 }
