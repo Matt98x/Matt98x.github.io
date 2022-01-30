@@ -72,9 +72,9 @@ function got_data(data) {
         words[i].border = border
     }
 
-    words.push(words)
-    words.push(words)
-    words.push(words)
+    for(let i=0;i<5*len;i++){
+        words.push(words[0])
+    }
     prevwords = words
 }
 
