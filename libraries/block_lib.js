@@ -50,7 +50,6 @@ class block_menu {
         this.cumulative1 = 0
 
         for (var i = initind; i < this.limit; i++) {
-            textSize(12)
             this.twidth = textWidth(Jsonclass[i].name) + 2 * border
             this.theight = 12 + 2 * border// this 12 is the default textSize
             if (orientation == "vertical") {
