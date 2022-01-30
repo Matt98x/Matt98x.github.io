@@ -62,7 +62,7 @@ function got_data(data) {
     header = data.meta
     words = data.data
     let len = Object.keys(words).length
-    for (let i = 0; i < 5*len; i++) {
+    for (let i = 0; i < len; i++) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
         words[i].side = 0
