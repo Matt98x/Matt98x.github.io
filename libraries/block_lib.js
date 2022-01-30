@@ -11,7 +11,7 @@ class block_menu {
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
-        this.offset = 0
+        this.offset = 10
         if (orientation == "vertical") {
             this.root.elt.style.width = str(width) +"px"
             this.root.elt.style.height = str(height) +"px"
