@@ -6,8 +6,7 @@ class block_menu {
         this.root = createDiv("")
         this.width = width
         this.height = height
-        this.graphics = createGraphics(width, height)
-        this.graphics.background(51)
+        
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
@@ -35,7 +34,8 @@ class block_menu {
         // this.root.style("-ms-overflow-style","none")
         // this.root.style("scrollbar-width","none")
         this.root.style('background-color',color(255,255,255,0))
-        console.log(this.graphics)
+        this.graphics = createGraphics(width, height)
+        this.graphics.background(51)
         image(this.graphics, ULCx, ULCy)
         this.root.elt.appendChild(this.graphics.elt)
         this.encumbrance = 2 * border
