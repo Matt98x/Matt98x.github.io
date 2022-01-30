@@ -14,6 +14,7 @@ class block_menu {
         this.root.elt.style.width = str(width) +"px"
         this.root.elt.style.height = str(height) +"px"
         this.root.elt.style.overflow = "scroll"
+        this.root.elt.background = color(51)
         console.log(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.root.elt.appendChild(this.graphics.elt)
