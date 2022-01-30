@@ -16,7 +16,7 @@ class block_menu {
         this.root.elt.style.overflow = "scroll"
         console.log(this.graphics)
         this.root.elt.appendChild(this.graphics.elt)
-        image(this.graphics, 0, 0)
+        //image(this.graphics, 0, 0)
         this.encumbrance = 2 * border
         this.limit = 0
 
