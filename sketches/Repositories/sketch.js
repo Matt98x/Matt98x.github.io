@@ -62,7 +62,7 @@ function got_data(data) {
     header = data.meta
     words = data.data
     let len = Object.keys(words).length
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < 5*len; i++) {
         words[i].callback = page_refer
         words[i].parameters = words[i].html_url
         words[i].side = 0
@@ -71,10 +71,10 @@ function got_data(data) {
         words[i].col_text = text_col
         words[i].border = border
     }
-    toTextMessage = {
-        "remaining": header["X-RateLimit-Reset"],
-        "last_reset": header["X-RateLimit-Remaining"]
-    }
+
+    words.push(words)
+    words.push(words)
+    words.push(words)
     prevwords = words
 }
 
