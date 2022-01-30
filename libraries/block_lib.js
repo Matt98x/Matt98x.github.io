@@ -15,7 +15,7 @@ class block_menu {
         this.root.elt.style.height = height + "px"
         this.root.elt.style.overflow = "scroll"
         image(this.graphics, ULCx, ULCy)
-        this.graphics.position(0,0)
+        this.graphics.position(100,100)
         this.encumbrance = 2 * border
         this.limit = 0
 
