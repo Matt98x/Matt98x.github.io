@@ -13,17 +13,20 @@ class block_menu {
         this.root.elt.style.top = ULCy + "px"
         this.offset = 0
         if (orientation == "vertical") {
+            this.root.elt.style.width = str(width) +"px"
+            this.root.elt.style.height = str(height) +"px"
             this.width=width-this.offset
             width=width-this.offset
-            
         } else if (orientation == "horizontal") {
-            this.height=height-this.offset 
-            height=height-this.offset
-            
-        } else {
+            this.root.elt.style.width = str(width) +"px"
+            this.root.elt.style.height = str(height) +"px" 
             this.height=height-this.offset
             height=height-this.offset
-            
+        } else {
+            this.root.elt.style.width = str(width) +"px"
+            this.root.elt.style.height = str(height) +"px"
+            this.height=height-this.offset
+            height=height-this.offset
         } 
         
         this.root.elt.style.height = str(height) +"px"
