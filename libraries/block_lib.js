@@ -16,7 +16,7 @@ class block_menu {
             this.width=width-this.offset
             width=width-this.offset
             
-        } else if ("horizontal") {
+        } else if (orientation == "horizontal") {
             this.height=height-this.offset 
             height=height-this.offset
             
