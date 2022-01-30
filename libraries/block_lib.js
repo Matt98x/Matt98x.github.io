@@ -19,7 +19,7 @@ class block_menu {
         this.root.elt.appendChild(this.graphics.elt)
         this.encumbrance = 2 * border
         this.limit = 0
-        this.offset = 5
+        this.offset = 10
 
         // Loop to get the encumbrance of the menu
         // for (var j = initind; j < this.len; j++) {
