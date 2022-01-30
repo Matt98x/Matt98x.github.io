@@ -3,7 +3,7 @@ class block_menu {
     constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind) {
         this.len = Object.keys(Jsonclass).length
         this.list = []
-        this.root = createElement("div")
+        this.root = createDiv()
         this.width = width
         this.height = height
         this.graphics = createGraphics(width, height)
