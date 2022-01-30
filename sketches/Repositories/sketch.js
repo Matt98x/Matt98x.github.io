@@ -83,7 +83,7 @@ function mainscript(ww, wh) {
     n_menu = new Navigation_m(ww, 100)
     //left_menu = new block_menu(wcopy, ww - repowidth, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
     //n_menu.nav_height
-    repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh, 5, 1, "vertical", 0)
+    repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh-n_menu.nav_height, 5, 1, "vertical", 0)
     new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,ww - 2*repowidth,wh - n_menu.nav_height) 
     
 }
