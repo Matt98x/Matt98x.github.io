@@ -9,7 +9,7 @@ class block_menu {
         this.graphics = createGraphics(width, height)
         this.graphics.background(51)
 
-        this.root.elt.appendChild(this.graphics)
+        this.root.elt.append(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
@@ -117,7 +117,7 @@ class block_menu {
             this.list.push(this.temp)
 
         }
-        this.root.elt.appendChild(this.list)
+        this.root.elt.append(this.list)
         document.getElementsByTagName("body")[0].appendChild(this.root.elt)
     }
 
