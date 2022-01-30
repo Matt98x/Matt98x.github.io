@@ -128,7 +128,7 @@ class block_menu {
             this.temp.button.style('border', Jsonclass[i].border)
             this.list.push(this.temp)
             console.log(this.list[i])
-            this.root.elt.appendChild(this.list[i])
+            this.root.elt.appendChild(this.list[i].button.elt)
         }
         
         document.getElementsByTagName("body")[0].appendChild(this.root.elt)
