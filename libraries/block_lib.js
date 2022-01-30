@@ -139,7 +139,7 @@ class Button_of_menu {
         this.y = y
         this.width = width
         this.height = height
-
+        this.button.style("textAllign","center")
         this.button = createButton(this.name)
         this.button.position(x, y)
         this.button.size(width, height)
