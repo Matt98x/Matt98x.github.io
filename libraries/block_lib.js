@@ -11,14 +11,15 @@ class block_menu {
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
-        this.root.elt.style.width = str(width+5) +"px"
-        this.root.elt.style.height = str(height+5) +"px"
+        this.root.elt.style.width = str(width) +"px"
+        this.root.elt.style.height = str(height) +"px"
         this.root.elt.style.overflow = "scroll"
         console.log(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.root.elt.appendChild(this.graphics.elt)
         this.encumbrance = 2 * border
         this.limit = 0
+        this.offset = 5
 
         // Loop to get the encumbrance of the menu
         // for (var j = initind; j < this.len; j++) {
@@ -70,7 +71,7 @@ class block_menu {
                 } else {
                     this.bheight = this.theight * (height - 2 * border) / this.encumbrance
                 }
-                this.bwidth = width - 2 * border
+                this.bwidth = width - 2 * border -this.offset
                 this.spaceL = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceU = border + this.cumulative0
@@ -90,7 +91,7 @@ class block_menu {
                 } else {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
-                this.bheight = height - 2 * border
+                this.bheight = height - 2 * border - this.offset
                 this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
@@ -109,7 +110,7 @@ class block_menu {
                 } else {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
-                this.bheight = height - 2 * border
+                this.bheight = height - 2 * border - this.offset
                 this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
