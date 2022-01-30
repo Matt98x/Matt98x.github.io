@@ -13,14 +13,17 @@ class block_menu {
         this.root.elt.style.top = ULCy + "px"
         this.offset = 0
         if (orientation == "vertical") {
-            width=width-this.offset
             this.width=width-this.offset
+            width=width-this.offset
+            
         } else if ("horizontal") {
-            height=height-this.offset
             this.height=height-this.offset 
-        } else {
             height=height-this.offset
+            
+        } else {
             this.height=height-this.offset
+            height=height-this.offset
+            
         } 
         
         this.root.elt.style.height = str(height) +"px"
