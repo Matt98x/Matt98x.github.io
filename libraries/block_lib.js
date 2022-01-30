@@ -15,7 +15,7 @@ class block_menu {
         this.root.elt.style.height = height + "px"
         this.root.elt.style.overflow = "scroll"
         console.log(this.graphics)
-        image(this.graphics, ULCx, ULCy)
+        //image(this.graphics, 0, 0)
         this.encumbrance = 2 * border
         this.limit = 0
 
@@ -70,7 +70,7 @@ class block_menu {
                     this.bheight = this.theight * (height - 2 * border) / this.encumbrance
                 }
                 this.bwidth = width - 2 * border
-                this.spaceL = 0
+                this.spaceL = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceU = border + this.cumulative0
                     this.cumulative0 += interspace + this.bheight
@@ -90,7 +90,7 @@ class block_menu {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
                 this.bheight = height - 2 * border
-                this.spaceU = 0
+                this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
                     this.cumulative0 += interspace + this.bwidth
@@ -109,7 +109,7 @@ class block_menu {
                     this.bwidth = this.twidth * (width - 2 * border) / this.encumbrance
                 }
                 this.bheight = height - 2 * border
-                this.spaceU = 0
+                this.spaceU = border
                 if (Jsonclass[i].side == 0) {
                     this.spaceL = border + this.cumulative0
                     this.cumulative0 += interspace + this.bwidth
