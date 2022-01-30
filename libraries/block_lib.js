@@ -6,7 +6,6 @@ class block_menu {
         this.root = createDiv("")
         this.width = width
         this.height = height
-        
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"

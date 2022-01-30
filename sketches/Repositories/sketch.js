@@ -24,7 +24,7 @@ var left_menu // left menu
 var prevword // previous repositories status (to check for changes)
 var prevWwidth // previous Window width (to check for changes)
 var prevWheight // previous window height (to check for changes)
-var repowidth = 200 // width of the repository list
+var repowidth = 300 // width of the repository list
 var prevtime
 var reloadCount // how many times the page has been reloaded
 var last_reset // the last polling reset obtained
