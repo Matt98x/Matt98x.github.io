@@ -8,40 +8,53 @@ class block_menu {
         this.height = height
         this.graphics = createGraphics(width, height)
         this.graphics.background(51)
-
+        this.root.elt.style.position = "absolute"
+        this.root.elt.style.left = ULCx + "px"
+        this.root.elt.style.top = ULCy + "px"
+        this.root.elt.style.width = width + "px"
+        this.root.elt.style.height = height + "px"
+        this.root.elt.style.overflow = "scroll"
         this.root.elt.append(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
 
         // Loop to get the encumbrance of the menu
-        for (var j = initind; j < this.len; j++) {
-            if (orientation == "vertical") {
-                this.encumbrance += 12 + 2 * border// this is the default
-                if (this.encumbrance > height - 2 * border) {
-                    this.encumbrance -= 12 + 2 * border// this is the default
-                    this.limit = j
-                    break
-                }
-            } else if ("horizontal") {
-                this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
-                if (this.encumbrance > width - 2 * border) {
-                    this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
-                    this.limit = j
-                    break
-                }
-            } else {
-                console.log("Invalid orientation: default to horizontal")
-                this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
-                if (this.encumbrance > width - 2 * border) {
-                    this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
-                    this.limit = j
-                    break
-                }
-            }
-            this.limit = j + 1
+        // for (var j = initind; j < this.len; j++) {
+        //     if (orientation == "vertical") {
+        //         this.encumbrance += 12 + 2 * border// this is the default
+        //         if (this.encumbrance > height - 2 * border) {
+        //             this.encumbrance -= 12 + 2 * border// this is the default
+        //             this.limit = j
+        //             break
+        //         }
+        //     } else if ("horizontal") {
+        //         this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
+        //         if (this.encumbrance > width - 2 * border) {
+        //             this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
+        //             this.limit = j
+        //             break
+        //         }
+        //     } else {
+        //         console.log("Invalid orientation: default to horizontal")
+        //         this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
+        //         if (this.encumbrance > width - 2 * border) {
+        //             this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
+        //             this.limit = j
+        //             break
+        //         }
+        //     }
+        //     this.limit = j + 1
+        // }
+        this.limit = this.len
+        if (orientation == "vertical") {
+            this.encumbrance = (height - 2 * border)
+        } else if ("horizontal") {
+            this.encumbrance = (width - 2 * border) 
+        } else {
+            console.log("Invalid orientation: default to horizontal")
+            this.encumbrance = (width - 2 * border) 
         }
-
         this.cumulative0 = 0
         this.cumulative1 = 0
 
