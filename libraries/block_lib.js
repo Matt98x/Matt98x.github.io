@@ -3,10 +3,13 @@ class block_menu {
     constructor(Jsonclass, ULCx, ULCy, width, height, border, interspace, orientation, initind) {
         this.len = Object.keys(Jsonclass).length
         this.list = []
+        this.root = createElement("div")
         this.width = width
         this.height = height
         this.graphics = createGraphics(width, height)
         this.graphics.background(51)
+
+        this.root.elt.appendChild(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
@@ -107,13 +110,15 @@ class block_menu {
                 this.multiplier = (width - 2 * border) / this.encumbrance
             }
             this.temp = new Button_of_menu(Jsonclass[i], ULCx + this.spaceL, ULCy + this.spaceU, this.bwidth, this.bheight)
-            this.temp.button.style('background-color',Jsonclass[i].col_back)
-            this.temp.button.style('color',Jsonclass[i].col_text)
-            this.temp.button.style('border-radius',Jsonclass[i].border_radius)
-            this.temp.button.style('border',Jsonclass[i].border)
+            this.temp.button.style('background-color', Jsonclass[i].col_back)
+            this.temp.button.style('color', Jsonclass[i].col_text)
+            this.temp.button.style('border-radius', Jsonclass[i].border_radius)
+            this.temp.button.style('border', Jsonclass[i].border)
             this.list.push(this.temp)
 
         }
+        this.root.elt.appendChild(this.list)
+        document.getElementsByTagName("body")[0].appendChild(this.root.elt)
     }
 
 
