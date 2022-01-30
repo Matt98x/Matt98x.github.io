@@ -127,6 +127,7 @@ class block_menu {
             this.temp.button.style('border-radius', Jsonclass[i].border_radius)
             this.temp.button.style('border', Jsonclass[i].border)
             this.list.push(this.temp)
+            console.log(this.list[i])
             this.root.elt.appendChild(this.list[i])
         }
         
