@@ -7,7 +7,8 @@ class block_menu {
         this.width = width
         this.height = height
         this.graphics = createGraphics(width, height)
-        //this.graphics.background(51)
+        this.graphics.position(500,500)
+        this.graphics.background(51)
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
