@@ -7,13 +7,14 @@ class block_menu {
         this.width = width
         this.height = height
         this.graphics = createGraphics(width, height)
-        this.graphics.background(51)
+        //this.graphics.background(51)
         this.root.elt.style.position = "absolute"
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
         this.root.elt.style.width = width + "px"
         this.root.elt.style.height = height + "px"
         this.root.elt.style.overflow = "scroll"
+        console.log(this.graphics)
         this.root.elt.appendChild(this.graphics.elt)
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
