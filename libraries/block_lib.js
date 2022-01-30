@@ -14,7 +14,6 @@ class block_menu {
         this.root.elt.style.width = width + "px"
         this.root.elt.style.height = height + "px"
         this.root.elt.style.overflow = "scroll"
-        this.root.elt.append(this.graphics)
         image(this.graphics, ULCx, ULCy)
         this.encumbrance = 2 * border
         this.limit = 0
@@ -128,9 +127,9 @@ class block_menu {
             this.temp.button.style('border-radius', Jsonclass[i].border_radius)
             this.temp.button.style('border', Jsonclass[i].border)
             this.list.push(this.temp)
-
+            this.root.elt.appendChild(this.list[i])
         }
-        this.root.elt.append(this.list)
+        
         document.getElementsByTagName("body")[0].appendChild(this.root.elt)
     }
 
