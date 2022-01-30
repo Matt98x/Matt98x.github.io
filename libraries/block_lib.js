@@ -22,33 +22,7 @@ class block_menu {
         this.limit = 0
         this.offset = 10
 
-        // Loop to get the encumbrance of the menu
-        // for (var j = initind; j < this.len; j++) {
-        //     if (orientation == "vertical") {
-        //         this.encumbrance += 12 + 2 * border// this is the default
-        //         if (this.encumbrance > height - 2 * border) {
-        //             this.encumbrance -= 12 + 2 * border// this is the default
-        //             this.limit = j
-        //             break
-        //         }
-        //     } else if ("horizontal") {
-        //         this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
-        //         if (this.encumbrance > width - 2 * border) {
-        //             this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
-        //             this.limit = j
-        //             break
-        //         }
-        //     } else {
-        //         console.log("Invalid orientation: default to horizontal")
-        //         this.encumbrance += textWidth(Jsonclass[j].name) + 2 * border
-        //         if (this.encumbrance > width - 2 * border) {
-        //             this.encumbrance -= textWidth(Jsonclass[j].name) + 2 * border
-        //             this.limit = j
-        //             break
-        //         }
-        //     }
-        //     this.limit = j + 1
-        // }
+        
         this.limit = this.len
         if (orientation == "vertical") {
             this.encumbrance = (height - 2 * border)
