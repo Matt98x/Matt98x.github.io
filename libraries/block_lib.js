@@ -147,12 +147,15 @@ class Button_of_menu {
         this.button.position(x, y)
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
-        this.button.mouseDragged(()=>{})
+        this.button.mouseDragged(this.nonecallback)
         this.button.func = obj.callback
         this.button.parameters = obj.parameters
     }
     callback() {
         this.func()
+    }
+    nonecallback(){
+
     }
 }
 
