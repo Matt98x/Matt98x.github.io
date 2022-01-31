@@ -34,6 +34,7 @@ var n_menu
 var current_time
 var Exception = true // If no more refresh are available
 var error_string
+var k 
 
 
 
@@ -104,7 +105,7 @@ function cleanup() {
     console.log("ciao")
     removeElements() // remove all html elements
     counter=0
-    var k = document.getElementsByTagName("h1")
+    var k = document.getElementsByTagName("H1")
     for( element in k){
         document.body.removeChild(element)
     }
