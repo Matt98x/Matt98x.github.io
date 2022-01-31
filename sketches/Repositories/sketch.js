@@ -60,11 +60,7 @@ function got_data1(data) {
     }else{
         Exception=true
     }
-    if(Exception){
-        v=new Date(data.rate.reset*1000)
-        console.log(v)
-        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
-    }
+   
     
     
 }
@@ -117,6 +113,11 @@ function setup() {
     canvas.position(0, 0)
     //background(255)
     window.addEventListener('resize', reportWindowSize)
+    if(Exception){
+        v=new Date(data.rate.reset*1000)
+        console.log(v)
+        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
+    }
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
