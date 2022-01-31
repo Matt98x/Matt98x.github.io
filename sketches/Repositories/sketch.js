@@ -32,7 +32,7 @@ var remaining // how many pollings I have left
 var wcopy = words
 var n_menu
 var current_time
-var Exception = true // If no more refresh are available
+var Exception = false // If no more refresh are available
 var error_string
 var k 
 
@@ -45,9 +45,6 @@ function preload() {
     //loadStrings("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",gottext)
 }
 
-function gottext(text){
-    console.log(text)
-}
 
 // Callback to store the list of repositories
 function got_data1(data) {
@@ -60,7 +57,10 @@ function got_data1(data) {
     }else{
         Exception=true
     }
-   
+    if(Exception){
+        v=new Date(data.rate.reset*1000)
+        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
+    }
     
     
 }
@@ -98,11 +98,9 @@ function mainscript(ww, wh) {
 
 // Function to delete every html elements
 function cleanup() {
-    console.log("ciao")
     removeElements() // remove all html elements
     counter=0
     k = document.getElementsByTagName("H1")
-    console.log(k)
     document.body.removeChild(k[0])
 
 }
@@ -113,11 +111,7 @@ function setup() {
     canvas.position(0, 0)
     //background(255)
     window.addEventListener('resize', reportWindowSize)
-    if(Exception){
-        v=new Date(data.rate.reset*1000)
-        console.log(v)
-        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
-    }
+    
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
