@@ -62,6 +62,9 @@ function got_data1(data) {
         console.log(v)
         error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
+    v=new Date(data.rate.reset/1000)
+        console.log(v)
+        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
 }
 
 // Callback to store the list of repositories
