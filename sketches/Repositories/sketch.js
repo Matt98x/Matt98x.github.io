@@ -107,7 +107,8 @@ function cleanup() {
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0)
-    background(255)
+    //background(255)
+    window.addEventListener('resize', reportWindowSize)
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
@@ -121,7 +122,7 @@ function setup() {
         document.body.appendChild(h)
     }
     
-    window.addEventListener('resize', reportWindowSize)
+    
 }
 
 // Function to report if the window size has changed and update the sketch
