@@ -107,7 +107,7 @@ function cleanup() {
     counter=0
     k = document.getElementsByTagName("H1")
     console.log(k)
-    
+    document.body.removeChild(k[0])
 
 }
 
