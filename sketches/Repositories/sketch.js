@@ -129,7 +129,7 @@ function reportWindowSize() {
     prevWheight = windowHeight // store the current value as the previous
     prevWwidth = windowWidth // store the current value as the previous
     resizeCanvas(windowWidth, windowHeight)
-    background(255) // refresh the canvas
+    //background(255) // refresh the canvas
     if(! Exception){
         mainscript(windowWidth, windowHeight) // reset the view
     }else{
