@@ -58,7 +58,7 @@ function got_data1(data) {
         loadJSON(path, got_data, 'jsonp')
     }else{
         Exception=true
-        v=new Date(data.rate.reset/1000)
+        v=new Date(data.rate.reset)
         console.log(v)
         error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
