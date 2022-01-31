@@ -40,7 +40,7 @@ class Navigation_m{
             "border":this.border
         }
         ]
-        this.nav_menu = new block_menu(this.nav_json, 0, 0, this.width+2*border, this.nav_height, 5, 1, "horizontal", 0)
+        this.nav_menu = new block_menu(this.nav_json, 0, 0, this.width+2*5, this.nav_height, 5, 1, "horizontal", 0)
     }
     
 }
