@@ -32,6 +32,8 @@ var remaining // how many pollings I have left
 var wcopy = words
 var n_menu
 var current_time
+var Exception = true // If no more refresh are available
+var error_string
 
 
 
@@ -54,6 +56,10 @@ function got_data1(data) {
     if (data.rate.remaining > 0) {
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
+    }else{
+        Exception=true
+        v=new Date(data.rate.reset/1000)
+        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
 }
 
@@ -101,7 +107,12 @@ function setup() {
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    mainscript(prevWwidth, prevWheight)
+    if(! Exception){
+        mainscript(prevWwidth, prevWheight)
+    }else{
+        createElement("h1",error_string)
+    }
+    
     window.addEventListener('resize', reportWindowSize)
 }
 
@@ -112,7 +123,11 @@ function reportWindowSize() {
     prevWwidth = windowWidth // store the current value as the previous
     resizeCanvas(windowWidth, windowHeight)
     background(255) // refresh the canvas
-    mainscript(windowWidth, windowHeight) // reset the view
+    if(! Exception){
+        mainscript(windowWidth, windowHeight) // reset the view
+    }else{
+        createElement("h1",error_string)
+    }
 }
 
 // Function in loop to handle any page modifications

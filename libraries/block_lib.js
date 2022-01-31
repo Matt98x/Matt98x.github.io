@@ -10,6 +10,9 @@ class block_menu {
         this.root.elt.style.left = ULCx + "px"
         this.root.elt.style.top = ULCy + "px"
         this.offset = 10
+        this.root.style('background-color',color(255,255,255,0))
+        this.graphics = createGraphics(width, height)
+        this.graphics.background(51)
         if (orientation == "vertical") {
             this.root.elt.style.width = str(width) +"px"
             this.root.elt.style.height = str(height) +"px"
@@ -29,12 +32,7 @@ class block_menu {
         
         this.root.elt.style.height = str(height) +"px"
         this.root.elt.style.overflow = "auto" //"scroll"
-        // this.root.elt.style.innerHtml = '-webkit-scrollbar {display: none;}'
-        // this.root.style("-ms-overflow-style","none")
-        // this.root.style("scrollbar-width","none")
-        this.root.style('background-color',color(255,255,255,0))
-        this.graphics = createGraphics(width, height)
-        this.graphics.background(51)
+        
         image(this.graphics, ULCx, ULCy)
         this.root.elt.appendChild(this.graphics.elt)
         this.encumbrance = 2 * border
