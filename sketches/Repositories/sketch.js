@@ -114,6 +114,7 @@ function setup() {
     if(! Exception){
         mainscript(prevWwidth, prevWheight)
     }else{
+        console.log("hi")
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
@@ -133,6 +134,7 @@ function reportWindowSize() {
     if(! Exception){
         mainscript(windowWidth, windowHeight) // reset the view
     }else{
+        console.log("hi")
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
