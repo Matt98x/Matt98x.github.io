@@ -101,8 +101,8 @@ function cleanup() {
     console.log("ciao")
     removeElements() // remove all html elements
     counter=0
-    while(document.body.child[2]){
-        document.body.remove(document.body.child[2])
+    while(document.body.children[2]){
+        document.body.remove(document.body.children[2])
     }
 }
 
