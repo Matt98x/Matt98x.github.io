@@ -121,7 +121,6 @@ class block_menu {
             this.temp.button.style('border-radius', Jsonclass[i].border_radius)
             this.temp.button.style('border', Jsonclass[i].border)
             this.list.push(this.temp)
-            console.log(this.list[i])
             this.root.elt.appendChild(this.list[i].button.elt)
         }
         
@@ -141,8 +140,8 @@ class Button_of_menu {
         this.y = y
         this.width = width
         this.height = height
-        textAlign(CENTER)
         this.button = createButton(this.name)
+        this.button.style("width","50%")
         this.button.position(x, y)
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
