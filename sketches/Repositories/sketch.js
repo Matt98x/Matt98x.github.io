@@ -100,8 +100,11 @@ function mainscript(ww, wh) {
 function cleanup() {
     removeElements() // remove all html elements
     counter=0
-    k = document.getElementsByTagName("H1")
-    document.body.removeChild(k[0])
+    if(Exception){
+        k = document.getElementsByTagName("H1")
+        document.body.removeChild(k[0])
+    }
+    
 
 }
 
