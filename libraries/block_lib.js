@@ -142,6 +142,8 @@ class Button_of_menu {
         this.height = height
         this.button = createButton(this.name)
         this.button.style("width","50%")
+        this.button.style("left-margin","25%")
+        this.button.style("right-margin","25%")
         this.button.position(x, y)
         this.button.size(width, height)
         this.button.mousePressed(this.callback)
