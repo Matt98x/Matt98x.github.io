@@ -105,6 +105,9 @@ function cleanup() {
     removeElements() // remove all html elements
     counter=0
     var k = document.getElementsByTagName("h1")
+    for( element in k){
+        document.body.removeChild(element)
+    }
 
 }
 
