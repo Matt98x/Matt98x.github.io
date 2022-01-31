@@ -114,7 +114,10 @@ function setup() {
     if(! Exception){
         mainscript(prevWwidth, prevWheight)
     }else{
-        createText(error_string)
+        var h = document.createElement("H1")
+        var t = document.createTextNode(error_string)
+        h.append(t)
+        document.body.appendChild(h)
     }
     
     window.addEventListener('resize', reportWindowSize)
@@ -130,7 +133,10 @@ function reportWindowSize() {
     if(! Exception){
         mainscript(windowWidth, windowHeight) // reset the view
     }else{
-        createText(error_string)
+        var h = document.createElement("H1")
+        var t = document.createTextNode(error_string)
+        h.append(t)
+        document.body.appendChild(h)
     }
 }
 
