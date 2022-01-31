@@ -59,6 +59,7 @@ function got_data1(data) {
     }else{
         Exception=true
         v=new Date(data.rate.reset/1000)
+        console.log(v)
         error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
 }
