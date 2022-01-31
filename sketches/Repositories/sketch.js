@@ -98,6 +98,7 @@ function mainscript(ww, wh) {
 
 // Function to delete every html elements
 function cleanup() {
+    console.log("ciao")
     removeElements() // remove all html elements
     counter=0
     while(document.body.child[2]){
