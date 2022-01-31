@@ -58,10 +58,13 @@ function got_data1(data) {
         loadJSON(path, got_data, 'jsonp')
     }else{
         Exception=true
+    }
+    if(Exception){
         v=new Date(data.rate.reset)
         console.log(v)
         error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
+    
     
 }
 
@@ -101,7 +104,8 @@ function cleanup() {
     console.log("ciao")
     removeElements() // remove all html elements
     counter=0
-    
+    var k = document.getElementsByTagName("h1")
+
 }
 
 // Setup function of the script
