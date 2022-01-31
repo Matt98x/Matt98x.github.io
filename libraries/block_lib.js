@@ -146,8 +146,7 @@ class Button_of_menu {
         this.button.style("right-margin","25%")
         this.button.position(x, y)
         this.button.size(width, height)
-        this.button.mousePressed(this.callback)
-        this.button.mouseDragged(this.nonecallback)
+        this.button.mouseClicked(this.callback)
         this.button.func = obj.callback
         this.button.parameters = obj.parameters
     }
