@@ -62,9 +62,7 @@ function got_data1(data) {
         console.log(v)
         error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
     }
-    v=new Date(data.rate.reset/1000)
-        console.log(v)
-        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
+    
 }
 
 // Callback to store the list of repositories
@@ -101,6 +99,10 @@ function mainscript(ww, wh) {
 // Function to delete every html elements
 function cleanup() {
     removeElements() // remove all html elements
+    counter=0
+    while(document.body.child[2]){
+        document.body.remove(document.body.child[2])
+    }
 }
 
 // Setup function of the script
@@ -115,7 +117,6 @@ function setup() {
     if(! Exception){
         mainscript(prevWwidth, prevWheight)
     }else{
-        console.log("hi")
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
@@ -135,7 +136,6 @@ function reportWindowSize() {
     if(! Exception){
         mainscript(windowWidth, windowHeight) // reset the view
     }else{
-        console.log("hi")
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
