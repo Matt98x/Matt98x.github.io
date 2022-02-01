@@ -74,7 +74,7 @@ function got_data(data) {
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = change_repo
-        words[i].parameters = [words[i].name,words[i].html_url]
+        words[i].parameters = [words[i].name,words[i].html_url,words[i].default_branch]
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -162,8 +162,8 @@ function change_repo(){
         readme=[]
     }
     console.log(this.parameters)
-    current_repo=this.parameters[1]
-    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters[0]+"/git/trees/main",gotRepoData,"jsonp")
+    current_repo=[this.parameters[1],this.parameters[2]]
+    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters[0]+"/git/trees/"+this.parameters[2],gotRepoData,"jsonp")
 }
 
 async function gotRepoData(data){
@@ -174,7 +174,7 @@ async function gotRepoData(data){
     for (let i = 0; i < len; i++) {
         list[i].name = list[i].path
         console.log(list[i].name)
-        list[i].html_url=current_repo+"/"+list[i].type+"/main/"+list[i].name
+        list[i].html_url=current_repo[0]+"/"+list[i].type+"/"+current_repo[1]+"/"+list[i].name
         console.log(list[i].html_url)
         list[i].callback = page_refer
         list[i].parameters = list[i].name
