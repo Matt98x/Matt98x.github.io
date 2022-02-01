@@ -155,13 +155,12 @@ function draw() {
 
 // Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
 function change_repo(){
-    if(readme!=[]){
-        var l = document.getElementsByTagName("div")
-        if(l.length>4){
-            document.body.removeChild(l[4])
-            readme = []
-        }
+   
+    if(readme.root){
+        document.removeChild(readme.root)
+        readme=[]
     }
+            
     
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
 }
