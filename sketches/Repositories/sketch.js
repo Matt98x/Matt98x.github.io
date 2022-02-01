@@ -178,7 +178,6 @@ async function gotRepoData(data){
         list[i].parameters=list[i].html_url
         console.log(list[i].parameters)
         list[i].callback = page_refer
-        list[i].parameters = list[i].name
         list[i].side = 1
         list[i].border_radius = border_rad
         list[i].col_back = back_col
