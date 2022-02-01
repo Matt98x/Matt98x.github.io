@@ -35,7 +35,7 @@ var current_time
 var Exception = false // If no more refresh are available
 var error_string
 var k 
-var readme = []
+var readme = [] // readme window 
 
 
 
@@ -73,7 +73,7 @@ function got_data(data) {
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = change_repo
-        words[i].parameters = words[i].name
+        words[i].parameters = words[i].html_url
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -166,6 +166,19 @@ function change_repo(){
 
 async function gotRepoData(data){
     console.log(data)
+    list=data.data
+    let len = Object.keys(list).length
+    for (let i = 0; i < len; i++) {
+        list[i].name = list[i].path
+        list[i].html_url=this.parameters
+        list[i].callback = change_repo
+        list[i].parameters = list[i].name
+        list[i].side = 0
+        list[i].border_radius = border_rad
+        list[i].col_back = back_col
+        list[i].col_text = text_col
+        list[i].border = border
+    }
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
 
 }
