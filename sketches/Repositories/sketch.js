@@ -157,7 +157,7 @@ function draw() {
 function change_repo(){
    
     if(readme.root){
-        document.removeChild(readme.root.elt)
+        document.body.removeChild(readme.root.elt)
         readme=[]
     }
             
