@@ -154,5 +154,7 @@ function draw() {
 
 // Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
 function change_repo(){
+    k = document.getElementsByTagName("zero-md")
+    document.body.removeChild(k[0])
     new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
 }
