@@ -156,8 +156,8 @@ function draw() {
 // Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
 function change_repo(){
     if(readme!=[]){
-        k = document.getElementsByTagName("div")
-        if(k.length()>4){
+        var l = document.getElementsByTagName("div")
+        if(l.length>4){
             document.body.removeChild(k[4])
             readme = []
         }
