@@ -71,8 +71,8 @@ function got_data(data) {
     words = data.data
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
-        words[i].callback = page_refer
-        words[i].parameters = words[i].html_url
+        words[i].callback = change_repo
+        words[i].parameters = words[i].name
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -92,7 +92,7 @@ function mainscript(ww, wh) {
     //left_menu = new block_menu(wcopy, ww - repowidth, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
     //n_menu.nav_height
     repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh-n_menu.nav_height, 5, 1, "vertical", 0)
-    new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,ww - 2*repowidth,wh - n_menu.nav_height) 
+     
     
 }
 
@@ -154,5 +154,5 @@ function draw() {
 
 // Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
 function change_repo(){
-
+    new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
 }
