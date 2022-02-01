@@ -175,6 +175,7 @@ async function gotRepoData(data){
         list[i].name = list[i].path
         console.log(list[i].name)
         list[i].html_url=current_repo[0]+"/"+list[i].type+"/"+current_repo[1]+"/"+list[i].name
+        list[i].parameters=list[i].html_url
         console.log(list[i].html_url)
         list[i].callback = page_refer
         list[i].parameters = list[i].name
