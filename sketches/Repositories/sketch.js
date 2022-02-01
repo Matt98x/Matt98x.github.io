@@ -169,6 +169,7 @@ function change_repo(){
 async function gotRepoData(data){
     console.log(data)
     list=data.data.tree
+    console.log(list)
     let len = Object.keys(list).length
     for (let i = 0; i < len; i++) {
         list[i].name = list[i].path
