@@ -175,5 +175,6 @@ class callback_list {
 
 // function to redirect to another page
 function page_refer() {
-    window.open(this.parameters, '_self')
+    console.log(this.parameters)
+    //window.open(this.parameters, '_self')
 }

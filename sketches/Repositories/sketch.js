@@ -176,7 +176,7 @@ async function gotRepoData(data){
         console.log(list[i].name)
         list[i].html_url=current_repo[0]+"/"+list[i].type+"/"+current_repo[1]+"/"+list[i].name
         list[i].parameters=list[i].html_url
-        console.log(list[i].html_url)
+        console.log(list[i].parameters)
         list[i].callback = page_refer
         list[i].parameters = list[i].name
         list[i].side = 1
@@ -185,6 +185,7 @@ async function gotRepoData(data){
         list[i].col_text = text_col
         list[i].border = border
     }
+    
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
 }
