@@ -158,7 +158,7 @@ function change_repo(){
     if(readme!=[]){
         var l = document.getElementsByTagName("div")
         if(l.length>4){
-            document.body.removeChild(k[4])
+            document.body.removeChild(l[4])
             readme = []
         }
     }
