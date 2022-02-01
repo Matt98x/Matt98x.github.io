@@ -35,7 +35,7 @@ var current_time
 var Exception = false // If no more refresh are available
 var error_string
 var k 
-var readme 
+var readme = []
 
 
 
