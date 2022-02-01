@@ -157,8 +157,10 @@ function draw() {
 function change_repo(){
     if(readme!=[]){
         k = document.getElementsByTagName("div")
-        document.body.removeChild(k[4])
-        readme = []
+        if(k.length()>4){
+            document.body.removeChild(k[4])
+            readme = []
+        }
     }
     
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
