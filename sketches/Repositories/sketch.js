@@ -36,6 +36,7 @@ var Exception = false // If no more refresh are available
 var error_string
 var k 
 var readme = [] // readme window 
+var current_repo
 
 
 
@@ -73,7 +74,7 @@ function got_data(data) {
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = change_repo
-        words[i].parameters = words[i].name
+        words[i].parameters = [words[i].name,words[i].html_url]
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -161,7 +162,8 @@ function change_repo(){
         readme=[]
     }
     console.log(this.parameters)
-    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters+"/git/trees/main",gotRepoData,"jsonp")
+    current_repo=this.parameters[1]
+    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters[0]+"/git/trees/main",gotRepoData,"jsonp")
 }
 
 async function gotRepoData(data){
@@ -170,8 +172,8 @@ async function gotRepoData(data){
     let len = Object.keys(list).length
     for (let i = 0; i < len; i++) {
         list[i].name = list[i].path
-        list[i].html_url=this.parameters
-        list[i].callback = change_repo
+        list[i].html_url=current_repo+"/"+list[i].type+"/main"
+        list[i].callback = page_refer
         list[i].parameters = list[i].name
         list[i].side = 0
         list[i].border_radius = border_rad
@@ -180,5 +182,5 @@ async function gotRepoData(data){
         list[i].border = border
     }
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
-
+    //left_menu = new block_menu(wcopy, ww - repowidth, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
 }
