@@ -160,7 +160,7 @@ function change_repo(){
         document.body.removeChild(readme.root.elt)
         readme=[]
     }
-            
+    console.log(this.parameters)
     loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters+"/git/trees/main",gotRepoData,"jsonp")
 }
 
