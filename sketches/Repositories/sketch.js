@@ -73,7 +73,7 @@ function got_data(data) {
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = change_repo
-        words[i].parameters = words[i].html_url
+        words[i].parameters = words[i].name
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -161,12 +161,12 @@ function change_repo(){
         readme=[]
     }
             
-    loadJSON("https://api.github.com/repos/Matt98x/Traversability_module/git/trees/main",gotRepoData,"jsonp")
+    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters+"/git/trees/main",gotRepoData,"jsonp")
 }
 
 async function gotRepoData(data){
     console.log(data)
-    list=data.data
+    list=data.data.tree
     let len = Object.keys(list).length
     for (let i = 0; i < len; i++) {
         list[i].name = list[i].path
