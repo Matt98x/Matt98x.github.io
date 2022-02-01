@@ -162,10 +162,10 @@ function change_repo(){
     }
             
     loadJSON("https://api.github.com/repos/Matt98x/Traversability_module/git/trees/main",gotRepoData,"jsonp")
-    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
 }
 
 async function gotRepoData(data){
     console.log(data)
-    
+    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
+
 }
