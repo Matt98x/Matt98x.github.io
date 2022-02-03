@@ -177,11 +177,14 @@ async function gotRepoData(data) {
     };
     list=[firstbutton]
     var stopper =true
+    var index
     for (let i = 0; i < len; i++) {
         data.data.tree[i].name = data.data.tree[i].path
         data.data.tree[i].html_url = current_repo[0] + "/" + data.data.tree[i].type + "/" + current_repo[1] + "/" + data.data.tree[i].name
         if(stopper && data.data.tree[i].name.includes(".md")){
             var stringer=data.data.tree[i].name
+            stopper = false
+            index=i
         }
         data.data.tree[i].parameters = data.data.tree[i].html_url
         data.data.tree[i].callback = page_refer
@@ -193,6 +196,6 @@ async function gotRepoData(data) {
         list.push(data.data.tree[i])
     }
 
-    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/"+current_repo[2]+"/"+ data.data.tree[i].type +"/"+stringer, repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
+    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/"+current_repo[2]+"/"+ data.data.tree[index].type +"/"+stringer, repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
 }
