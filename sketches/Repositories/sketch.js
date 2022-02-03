@@ -34,6 +34,7 @@ var error_string
 var k
 var readme = [] // readme window 
 var current_repo
+var list
 
 
 
