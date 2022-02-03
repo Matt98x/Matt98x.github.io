@@ -186,7 +186,7 @@ async function gotRepoData(data) {
         data.data.tree[i].col_back = back_col
         data.data.tree[i].col_text = text_col
         data.data.tree[i].border = border
-    }>
+    }
 
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md", repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
