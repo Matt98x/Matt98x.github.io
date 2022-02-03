@@ -186,7 +186,8 @@ async function gotRepoData(data) {
         data.data.tree[i].border_radius = border_rad
         data.data.tree[i].col_back = back_col
         data.data.tree[i].col_text = text_col
-        data.data.tree[i].border = border
+        data.data.tree[i].border = 
+        list.append(data.data.tree[i])
     }
 
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md", repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
