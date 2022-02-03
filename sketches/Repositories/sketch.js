@@ -164,7 +164,7 @@ async function gotRepoData(data) {
     console.log(data)
     
     console.log(list)
-    let len = Object.keys(list).length
+    let len = Object.keys(data.data.tree).length
     var firstbutton = {
         "name": "Go to Repositorys",
         "html_url":"https//api.github.com/repos/Matt98x/" + current_repo[0],
