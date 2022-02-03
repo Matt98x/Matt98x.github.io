@@ -31,7 +31,7 @@ var n_menu
 var current_time
 var Exception = false // If no more refresh are available
 var error_string
-var k 
+var k
 var readme = [] // readme window 
 var current_repo
 
@@ -40,7 +40,7 @@ var current_repo
 // Preload function to get any stored data
 function preload() {
 
-    loadJSON("https://api.github.com/rate_limit",got_data1)
+    loadJSON("https://api.github.com/rate_limit", got_data1)
     //loadStrings("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",gottext)
 }
 
@@ -53,15 +53,15 @@ function got_data1(data) {
     if (data.rate.remaining > 0) {
         path = 'https://api.github.com/users/Matt98x/repos'
         loadJSON(path, got_data, 'jsonp')
-    }else{
-        Exception=true
+    } else {
+        Exception = true
     }
-    if(Exception){
-        v=new Date(data.rate.reset*1000)
-        error_string="Error: the refreshes for this page have run out, try refresh the page after "+v
+    if (Exception) {
+        v = new Date(data.rate.reset * 1000)
+        error_string = "Error: the refreshes for this page have run out, try refresh the page after " + v
     }
-    
-    
+
+
 }
 
 // Callback to store the list of repositories
@@ -71,7 +71,7 @@ function got_data(data) {
     let len = Object.keys(words).length
     for (let i = 0; i < len; i++) {
         words[i].callback = change_repo
-        words[i].parameters = [words[i].name,words[i].html_url,words[i].default_branch]
+        words[i].parameters = [words[i].name, words[i].html_url, words[i].default_branch]
         words[i].side = 0
         words[i].border_radius = border_rad
         words[i].col_back = back_col
@@ -79,27 +79,27 @@ function got_data(data) {
         words[i].border = border
     }
 
-    
+
     prevwords = words
 }
 
 // Main script of the page
 function mainscript(ww, wh) {
     n_menu = new Navigation_m(ww, 100)
-    repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh-n_menu.nav_height, 5, 1, "vertical", 0)
-     
-    
+    repositories = new block_menu(words, 0, n_menu.nav_height, repowidth, wh - n_menu.nav_height, 5, 1, "vertical", 0)
+
+
 }
 
 // Function to delete every html elements
 function cleanup() {
     removeElements() // remove all html elements
-    counter=0
-    if(Exception){
+    counter = 0
+    if (Exception) {
         k = document.getElementsByTagName("H1")
         document.body.removeChild(k[0])
     }
-    
+
 
 }
 
@@ -109,20 +109,20 @@ function setup() {
     canvas.position(0, 0)
     //background(255)
     window.addEventListener('resize', reportWindowSize)
-    
+
     prevtime = millis()
     prevWheight = windowHeight
     prevWwidth = windowWidth
-    if(! Exception){
+    if (!Exception) {
         mainscript(prevWwidth, prevWheight)
-    }else{
+    } else {
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
         document.body.appendChild(h)
     }
-    
-    
+
+
 }
 
 // Function to report if the window size has changed and update the sketch
@@ -132,9 +132,9 @@ function reportWindowSize() {
     prevWwidth = windowWidth // store the current value as the previous
     resizeCanvas(windowWidth, windowHeight)
     //background(255) // refresh the canvas
-    if(! Exception){
+    if (!Exception) {
         mainscript(windowWidth, windowHeight) // reset the view
-    }else{
+    } else {
         var h = document.createElement("H1")
         var t = document.createTextNode(error_string)
         h.append(t)
@@ -148,36 +148,45 @@ function draw() {
 }
 
 // Callback to be activated when a button in the repository list is pressed to change the element visualized in the center
-function change_repo(){
-   
-    if(readme.root){
+function change_repo() {
+
+    if (readme.root) {
         document.body.removeChild(readme.root.elt)
-        readme=[]
+        readme = []
     }
     console.log(this.parameters)
-    current_repo=[this.parameters[1],this.parameters[2]]
-    loadJSON("https://api.github.com/repos/Matt98x/"+this.parameters[0]+"/git/trees/"+this.parameters[2],gotRepoData,"jsonp")
+    current_repo = [this.parameters[1], this.parameters[2]]
+    loadJSON("https://api.github.com/repos/Matt98x/" + this.parameters[0] + "/git/trees/" + this.parameters[2], gotRepoData, "jsonp")
 }
 
-async function gotRepoData(data){
+async function gotRepoData(data) {
     console.log(data)
-    list=data.data.tree
+    list = data.data.tree
     console.log(list)
     let len = Object.keys(list).length
+    firstbutton = {
+        "name": "Go to Repositorys",
+        "html_url": "https://api.github.com/repos/Matt98x/" + current_repo[0],
+        "parameters": firstbutton.html_url,
+        "side": 0,
+        "callback": page_refer,
+        "border_radius": border_rad,
+        "border": border
+
+    };
+    list.prepend(firstbutton)
     for (let i = 0; i < len; i++) {
         list[i].name = list[i].path
-        console.log(list[i].name)
-        list[i].html_url=current_repo[0]+"/"+list[i].type+"/"+current_repo[1]+"/"+list[i].name
-        list[i].parameters=list[i].html_url
-        console.log(list[i].parameters)
+        list[i].html_url = current_repo[0] + "/" + list[i].type + "/" + current_repo[1] + "/" + list[i].name
+        list[i].parameters = list[i].html_url
         list[i].callback = page_refer
-        list[i].side = 1
+        list[i].side = 0
         list[i].border_radius = border_rad
         list[i].col_back = back_col
         list[i].col_text = text_col
         list[i].border = border
     }
-    
-    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md",repowidth,n_menu.nav_height,windowWidth - 2*repowidth,windowHeight - n_menu.nav_height)
+
+    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md", repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
 }
