@@ -166,8 +166,8 @@ async function gotRepoData(data) {
     let len = Object.keys(list).length
     var firstbutton = {
         "name": "Go to Repositorys",
-        "html_url": "https://api.github.com/repos/Matt98x/" + current_repo[0],
-        "parameters": firstbutton.html_url,
+        "html_url":"https//api.github.com/repos/Matt98x/" + current_repo[0],
+        "parameters": "https//api.github.com/repos/Matt98x/" + current_repo[0],
         "side": 0,
         "callback": page_refer,
         "border_radius": border_rad,
