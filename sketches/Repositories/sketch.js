@@ -175,7 +175,7 @@ async function gotRepoData(data) {
         "border": border
 
     };
-    list=firstbutton
+    list=[firstbutton]
     
     for (let i = 0; i < len; i++) {
         data.data.tree[i].name = data.data.tree[i].path
