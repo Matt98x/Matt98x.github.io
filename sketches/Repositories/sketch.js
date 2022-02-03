@@ -166,9 +166,9 @@ async function gotRepoData(data) {
     console.log(list)
     let len = Object.keys(data.data.tree).length
     var firstbutton = {
-        "name": "Go to Repositorys",
-        "html_url":"https//api.github.com/repos/Matt98x/" + current_repo[0],
-        "parameters": "https//api.github.com/repos/Matt98x/" + current_repo[0],
+        "name": "Go to Repository",
+        "html_url": current_repo[0],
+        "parameters":  current_repo[0],
         "side": 0,
         "callback": page_refer,
         "border_radius": border_rad,
@@ -186,7 +186,7 @@ async function gotRepoData(data) {
         data.data.tree[i].border_radius = border_rad
         data.data.tree[i].col_back = back_col
         data.data.tree[i].col_text = text_col
-        data.data.tree[i].border = 
+        data.data.tree[i].border = border
         list.push(data.data.tree[i])
     }
 
