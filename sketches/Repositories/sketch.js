@@ -156,7 +156,7 @@ function change_repo() {
         readme = []
     }
     console.log(this.parameters)
-    current_repo = [this.parameters[1], this.parameters[2]]
+    current_repo = [this.parameters[1], this.parameters[2],this.parameters[0]]
     loadJSON("https://api.github.com/repos/Matt98x/" + this.parameters[0] + "/git/trees/" + this.parameters[2], gotRepoData, "jsonp")
 }
 
@@ -176,10 +176,13 @@ async function gotRepoData(data) {
 
     };
     list=[firstbutton]
-    
+    var stopper =true
     for (let i = 0; i < len; i++) {
         data.data.tree[i].name = data.data.tree[i].path
         data.data.tree[i].html_url = current_repo[0] + "/" + data.data.tree[i].type + "/" + current_repo[1] + "/" + data.data.tree[i].name
+        if(stopper && data.data.tree[i].name.includes(".md")){
+            var stringer=data.data.tree[i].name
+        }
         data.data.tree[i].parameters = data.data.tree[i].html_url
         data.data.tree[i].callback = page_refer
         data.data.tree[i].side = 0
@@ -190,6 +193,6 @@ async function gotRepoData(data) {
         list.push(data.data.tree[i])
     }
 
-    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md", repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
+    readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/"+current_repo[2]+"/"+ data.data.tree[i].type +"/"+stringer, repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
 }
