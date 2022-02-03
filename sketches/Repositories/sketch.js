@@ -161,7 +161,7 @@ function change_repo() {
 
 async function gotRepoData(data) {
     console.log(data)
-    list = data.data.tree
+    
     console.log(list)
     let len = Object.keys(list).length
     var firstbutton = {
@@ -174,18 +174,19 @@ async function gotRepoData(data) {
         "border": border
 
     };
-    list.prepend(firstbutton)
+    list=firstbutton
+    
     for (let i = 0; i < len; i++) {
-        list[i].name = list[i].path
-        list[i].html_url = current_repo[0] + "/" + list[i].type + "/" + current_repo[1] + "/" + list[i].name
-        list[i].parameters = list[i].html_url
-        list[i].callback = page_refer
-        list[i].side = 0
-        list[i].border_radius = border_rad
-        list[i].col_back = back_col
-        list[i].col_text = text_col
-        list[i].border = border
-    }
+        data.data.tree[i].name = data.data.tree[i].path
+        data.data.tree[i].html_url = current_repo[0] + "/" + data.data.tree[i].type + "/" + current_repo[1] + "/" + data.data.tree[i].name
+        data.data.tree[i].parameters = data.data.tree[i].html_url
+        data.data.tree[i].callback = page_refer
+        data.data.tree[i].side = 0
+        data.data.tree[i].border_radius = border_rad
+        data.data.tree[i].col_back = back_col
+        data.data.tree[i].col_text = text_col
+        data.data.tree[i].border = border
+    }>
 
     readme = new MD_handler("https://raw.githubusercontent.com/Matt98x/traversability_module/main/README.md", repowidth, n_menu.nav_height, windowWidth - 2 * repowidth, windowHeight - n_menu.nav_height)
     left_menu = new block_menu(list, windowWidth - repowidth, n_menu.nav_height, repowidth, windowHeight - n_menu.nav_height, 5, 1, "vertical", 0)
